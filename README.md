@@ -27,7 +27,7 @@
 * [cmp-path](https://github.com/hrsh7th/cmp-path) - A [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) source for filesystem paths.
 * [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua.
 * [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - These plugins allows create and use custom snippets.
-    * These plugins requires [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+    * These plugins requires [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) and [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 * [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) - LSP UI.
 * [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - telescope.nvim is a highly extendable fuzzy finder over lists.
     * It requires [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) and [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
