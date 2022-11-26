@@ -1,4 +1,4 @@
-# Shawn's neovim configuration
+# Victor's Neovim configuration
 
 ## Pre-requeriments
 * [Neovim](https://neovim.io/) >= 0.8 version
@@ -9,10 +9,9 @@
 * [Homebrew](https://brew.sh/) (Only for Unix users)
 * mingw: This is necessary for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter). [Unix installation](https://formulae.brew.sh/formula/mingw-w64#default) / [Windows installation](https://community.chocolatey.org/packages/mingw)
 
-
 ## Neovim config
 
-> Plugins
+### Plugins
 
 **Note:** Before the plugins installation, you need install [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
@@ -36,7 +35,7 @@
 * [Comment.nvim](https://github.com/numToStr/Comment.nvim) - Make comments faster.
 * [editorconfig.nvim](https://github.com/gpanders/editorconfig.nvim) - Editorconfig allows set defaults rules for specifics file extensions or global files.
 
-> Setup
+## Neovim setup
 
 1. Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
