@@ -23,6 +23,16 @@ keymap("", "<C-h>", "<C-w>h", options)
 keymap("", "<C-k>", "<C-w>k", options)
 keymap("", "<C-j>", "<C-w>j", options)
 keymap("", "<C-l>", "<C-w>l", options)
+keymap("", "<C-l>", "<C-w>l", options)
+
+-- Resize window
+keymap("n", "t<left>", "<C-w>>", options)
+keymap("n", "t<right>", "<C-w><", options)
+keymap("n", "t<up>", "<C-w>+", options)
+keymap("n", "t<down>", "<C-w>-", options)
+
+-- New tab
+keymap("n", "te", ":tabedit<CR>", options)
 
 --Telescope
 keymap("n", "<F1>", ":Telescope file_browser<CR>", options)
@@ -34,7 +44,6 @@ keymap("n", "ññ", ":Lspsaga hover_doc<CR>", options)
 keymap("n", "gd", ":Lspsaga lsp_finder<CR>", options)
 keymap("n", "gp", ":Lspsaga preview_definition<CR>", options)
 keymap("n", "ff", ":Lspsaga code_action<CR>", options)
-
 
 -- Normal mode in terminal mode
 keymap("t", "<Esc><Esc>", "<C-\\><C-n>", options)
