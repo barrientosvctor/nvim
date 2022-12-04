@@ -3,7 +3,8 @@ require("keymaps")
 
 -- Customization
 -- require("after.plugin.horizon")
-require("after.plugin.ayu")
+-- require("after.plugin.ayu")
+require("after.plugin.twilight")
 require("after.plugin.lualine")
 
 -- LSP

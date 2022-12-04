@@ -10,10 +10,15 @@ return packer.startup(function(use)
     -- Customization
     use "LunarVim/horizon.nvim"
     use "Shatur/neovim-ayu"
+    use "~/AppData/Local/nvim-data/site/pack/local/twilight.nvim"
     use "nvim-lualine/lualine.nvim"
+    use "nvim-tree/nvim-web-devicons"
 
     -- LSP
-    use "nvim-treesitter/nvim-treesitter"
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        requires = { "nvim-treesitter/playground" }
+    }
     use {
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",

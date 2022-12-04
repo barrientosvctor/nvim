@@ -10,6 +10,10 @@ treesitter.setup {
 	enable = true,
 	disable = {}
     },
+    playground = {
+        enable = true,
+        disable = {},
+    },
     autotag = {
 	enable = true
     }
