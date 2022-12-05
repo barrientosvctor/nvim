@@ -16,7 +16,7 @@
 **Note:** Before the plugins installation, you need install [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
 * [horizon.nvim](https://github.com/LunarVim/horizon.nvim)
-* [ayu.nvim](https://github.com/Shatur/neovim-ayu)
+* [twilight.nvim](https://github.com/barrientosvctor/twilight.nvim)
 * [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Insert or delete brackets, parens, quotes in pair.
 * [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Insert or delete brackets for HTML tags.
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP.
@@ -31,6 +31,7 @@
 * [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) - LSP UI.
 * [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - telescope.nvim is a highly extendable fuzzy finder over lists.
     * It requires [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) and [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
+* [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - Filetype icons for Neovim.
 
 * [Comment.nvim](https://github.com/numToStr/Comment.nvim) - Make comments faster.
 * [editorconfig.nvim](https://github.com/gpanders/editorconfig.nvim) - Editorconfig allows set defaults rules for specifics file extensions or global files.

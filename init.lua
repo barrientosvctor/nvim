@@ -23,7 +23,7 @@ vim.opt.pumblend = 5
 -- Clipboard
 if vim.fn.has("win32") then
     vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
-    vim.opt.shell = "pwsh"
+    -- vim.opt.shell = "pwsh"
 end
 
 if vim.fn.has("macunix") then

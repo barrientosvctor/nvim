@@ -9,8 +9,7 @@ return packer.startup(function(use)
 
     -- Customization
     use "LunarVim/horizon.nvim"
-    use "Shatur/neovim-ayu"
-    use "~/AppData/Local/nvim-data/site/pack/local/twilight.nvim"
+    use "barrientosvctor/twilight.nvim"
     use "nvim-lualine/lualine.nvim"
     use "nvim-tree/nvim-web-devicons"
 
