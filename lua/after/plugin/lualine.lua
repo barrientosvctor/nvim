@@ -7,7 +7,7 @@ end
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = "solarized",
     },
     sections = {
         lualine_a = {"mode"},

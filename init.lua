@@ -3,7 +3,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
-vim.opt.laststatus = 1
+vim.opt.laststatus = 3
 vim.cmd [[set noshowmode]]
 vim.cmd [[set noshowcmd]]
 

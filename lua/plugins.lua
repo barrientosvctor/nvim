@@ -8,20 +8,17 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
 
     -- Customization
-    use "LunarVim/horizon.nvim"
-    use "barrientosvctor/twilight.nvim"
     use "nvim-lualine/lualine.nvim"
-    use "nvim-tree/nvim-web-devicons"
+    use {
+	"svrana/neosolarized.nvim",
+	requires = { "tjdevries/colorbuddy.nvim" },
+    }
 
     -- LSP
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        requires = { "nvim-treesitter/playground" }
-    }
+    use "nvim-treesitter/nvim-treesitter"
     use {
 	"neovim/nvim-lspconfig",
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim"
+	"williamboman/mason.nvim"
     }
     use "glepnir/lspsaga.nvim"
 
@@ -48,8 +45,7 @@ return packer.startup(function(use)
     }
 
     -- Utils
-    use "windwp/nvim-autopairs"
-    use "windwp/nvim-ts-autotag"
+    use "jiangmiao/auto-pairs"
     use "numToStr/Comment.nvim"
     use "gpanders/editorconfig.nvim"
 end)
