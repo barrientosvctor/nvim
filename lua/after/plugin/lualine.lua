@@ -1,13 +1,10 @@
 local status, lualine = pcall(require, "lualine")
-if not status then
-    print("Lualine is not installed.")
-    return
-end
+if not status then return end
 
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = "solarized",
+        theme = "auto",
     },
     sections = {
         lualine_a = {"mode"},

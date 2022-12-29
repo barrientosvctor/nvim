@@ -1,20 +1,14 @@
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
-if not status then return end
+if not status then
+    print("Treesitter is not installed.")
+    return
+end
 
-treesitter.setup {
-    ensure_installed = { "lua", "html", "css", "javascript", "json" },
+treesitter.setup({
+    ensure_installed = { "javascript", "html", "python", "css" },
     sync_install = false,
     auto_install = true,
-    ignore_install = {},
     highlight = {
-	enable = true,
-	disable = {}
-    },
-    playground = {
-        enable = true,
-        disable = {},
-    },
-    autotag = {
-	enable = true
+        enable = true
     }
-}
+})

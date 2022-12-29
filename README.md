@@ -15,8 +15,6 @@
 
 **Note:** Before the plugins installation, you need install [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
-* [horizon.nvim](https://github.com/LunarVim/horizon.nvim)
-* [twilight.nvim](https://github.com/barrientosvctor/twilight.nvim)
 * [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Insert or delete brackets, parens, quotes in pair.
 * [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Insert or delete brackets for HTML tags.
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP.

@@ -4,8 +4,8 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.laststatus = 3
-vim.cmd [[set noshowmode]]
-vim.cmd [[set noshowcmd]]
+vim.cmd("set noshowmode")
+vim.cmd("set noshowcmd")
 
 -- Spaces / indents
 vim.opt.sw = 4 -- Spaces
@@ -23,7 +23,7 @@ vim.opt.pumblend = 5
 -- Clipboard
 if vim.fn.has("win32") then
     vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
-    -- vim.opt.shell = "pwsh"
+    vim.opt.shell = "powershell"
 end
 
 if vim.fn.has("macunix") then

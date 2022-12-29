@@ -1,5 +1,5 @@
-local options = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
+local options = { noremap = true, silent = true }
 
 -- Hotkeys
 keymap("n", "<C-q>", ":q<CR>", options)
@@ -18,11 +18,10 @@ keymap("n", "-", "<C-x>", options)
 keymap("n", "th", ":botright new <Bar> :term<CR>", options)
 keymap("n", "tv", ":botright vnew <Bar> :term<CR>", options)
 
--- Movement between windows
+-- Move between windows
 keymap("", "<C-h>", "<C-w>h", options)
-keymap("", "<C-k>", "<C-w>k", options)
 keymap("", "<C-j>", "<C-w>j", options)
-keymap("", "<C-l>", "<C-w>l", options)
+keymap("", "<C-k>", "<C-w>k", options)
 keymap("", "<C-l>", "<C-w>l", options)
 
 -- Resize window
@@ -44,6 +43,3 @@ keymap("n", "ññ", ":Lspsaga hover_doc<CR>", options)
 keymap("n", "gd", ":Lspsaga lsp_finder<CR>", options)
 keymap("n", "gp", ":Lspsaga preview_definition<CR>", options)
 keymap("n", "ff", ":Lspsaga code_action<CR>", options)
-
--- Normal mode in terminal mode
-keymap("t", "<Esc><Esc>", "<C-\\><C-n>", options)
