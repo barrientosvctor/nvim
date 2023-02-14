@@ -15,14 +15,11 @@
 
 **Note:** Before the plugins installation, you need install [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
-* [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Insert or delete brackets, parens, quotes in pair.
-* [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Insert or delete brackets for HTML tags.
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP.
 * [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP Installer
     * It requires [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion engine plugin for neovim written in Lua. Completion sources are installed from external repositories and "sourced".
 * [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - A [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) source for neovim's built-in language server client.
-* [cmp-path](https://github.com/hrsh7th/cmp-path) - A [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) source for filesystem paths.
 * [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua.
 * [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - These plugins allows create and use custom snippets.
     * These plugins requires [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) and [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
@@ -30,12 +27,15 @@
 * [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - telescope.nvim is a highly extendable fuzzy finder over lists.
     * It requires [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) and [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
 * [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - Filetype icons for Neovim.
-
-* [Comment.nvim](https://github.com/numToStr/Comment.nvim) - Make comments faster.
 * [editorconfig.nvim](https://github.com/gpanders/editorconfig.nvim) - Editorconfig allows set defaults rules for specifics file extensions or global files.
+* [impatient.nvim](https://github.com/lewis6991/impatient.nvim) - Improve startup time in Neovim
 
 ## Neovim setup
 
 1. Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 2. Install plugins with `PackerInstall`
+
+3. Type this commands: `:LspInstall tsserver pyright clangd`
+
+Enjoy!

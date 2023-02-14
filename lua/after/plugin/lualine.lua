@@ -1,5 +1,5 @@
 local status, lualine = pcall(require, "lualine")
-if not status then return end
+if (not status) then return end
 
 lualine.setup({
     options = {
@@ -23,5 +23,3 @@ lualine.setup({
         lualine_z = {}
     },
 })
-
-lualine.get_config()
