@@ -34,7 +34,7 @@
 
 1. Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
-2. Install plugins with `PackerInstall`
+2. Install plugins with `:PackerInstall`
 
 3. Type this commands: `:LspInstall tsserver pyright clangd`
 
