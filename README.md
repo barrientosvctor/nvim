@@ -38,6 +38,6 @@
 
 2. Install plugins with `:PackerInstall`
 
-3. Type this commands: `:LspInstall typescript pyright clangd`
+3. Type this commands: `:LspInstall tsserver pyright clangd`
 
 Enjoy!
