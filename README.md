@@ -15,8 +15,9 @@
 
 **Note:** Before the plugins installation, you need install [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
+* [neosolarized.nvim](https://github.com/svrana/neosolarized.nvim) | [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim)
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP.
-* [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP Installer
+* [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP Installer.
     * It requires [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion engine plugin for neovim written in Lua. Completion sources are installed from external repositories and "sourced".
 * [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - A [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) source for neovim's built-in language server client.
@@ -28,7 +29,8 @@
     * It requires [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) and [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
 * [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - Filetype icons for Neovim.
 * [editorconfig.nvim](https://github.com/gpanders/editorconfig.nvim) - Editorconfig allows set defaults rules for specifics file extensions or global files.
-* [impatient.nvim](https://github.com/lewis6991/impatient.nvim) - Improve startup time in Neovim
+* [impatient.nvim](https://github.com/lewis6991/impatient.nvim) - Improve startup time in Neovim.
+* [nvim-autotag](https://github.com/windwp/nvim-ts-autotag) | [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Automate brackets and tag.
 
 ## Neovim setup
 
@@ -36,6 +38,6 @@
 
 2. Install plugins with `:PackerInstall`
 
-3. Type this commands: `:LspInstall tsserver pyright clangd`
+3. Type this commands: `:LspInstall typescript pyright clangd`
 
 Enjoy!

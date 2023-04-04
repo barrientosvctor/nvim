@@ -1,15 +1,20 @@
 local status, packer = pcall(require, "packer")
-if not status then
-    print("Packer is not installed.")
+
+if (not status) then
+    print("Packer.nvim is not installed.")
     return
 end
 
-return packer.startup(function(use)
+packer.startup(function(use)
     use "wbthomason/packer.nvim"
+
+    -- Improve nvim speed
     use "lewis6991/impatient.nvim"
 
-    -- UI
+    -- Customization
+    use "tjdevries/colorbuddy.nvim"
     use "nvim-tree/nvim-web-devicons"
+    use "svrana/neosolarized.nvim"
     use "nvim-lualine/lualine.nvim"
 
     -- LSP
@@ -17,9 +22,6 @@ return packer.startup(function(use)
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use "glepnir/lspsaga.nvim"
-
-    -- Syntax highlighting
-    use "nvim-treesitter/nvim-treesitter"
 
     -- Autocomplete
     use "hrsh7th/cmp-nvim-lsp"
@@ -30,15 +32,23 @@ return packer.startup(function(use)
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"
 
-    -- Tree
+    -- Syntax
     use {
-        "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
-        requires = {
-            "nvim-lua/plenary.nvim",
-	        "nvim-telescope/telescope-file-browser.nvim"
-        },
+        "nvim-treesitter/nvim-treesitter",
+        run = function()
+            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+            ts_update()
+        end,
     }
 
+    -- Tree
+    use {
+        "nvim-telescope/telescope.nvim", tag = "0.1.1",
+        requires = { {"nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim"} }
+    }
+
+    -- Utils
     use "gpanders/editorconfig.nvim"
+    use "windwp/nvim-ts-autotag"
+    use "windwp/nvim-autopairs"
 end)

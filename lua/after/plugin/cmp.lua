@@ -4,6 +4,9 @@ if (not cmp_status) then return end
 local luasnip_status, luasnip = pcall(require, "luasnip")
 if (not luasnip_status) then return end
 
+local autopairs_status, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if (not autopairs_status) then return end
+
 -- Snippets engine like vscode
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -57,8 +60,8 @@ cmp.setup({
 	    ["<C-a>"] = cmp.mapping.select_prev_item(),
         ["<C-f>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<CR>"] = cmp.mapping.confirm({ select = true })
     }),
     sources = cmp.config.sources({
@@ -66,3 +69,8 @@ cmp.setup({
         { name = "luasnip" },
     })
 })
+
+cmp.event:on(
+    "confirm_done",
+    cmp_autopairs.on_confirm_done()
+)

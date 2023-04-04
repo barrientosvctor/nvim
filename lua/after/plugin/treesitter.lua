@@ -1,15 +1,35 @@
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
-if not status then
-    print("Treesitter is not installed.")
+if (not status) then
+    print("TreeSitter is not installed.")
     return
 end
 
+local status, _ = pcall(require, "nvim-ts-autotag")
+if (not status) then return end
+
 treesitter.setup({
-    -- Lspsaga.nvim needs these syntax highlight to work.
-    ensure_installed = { "markdown", "markdown_inline" },
-    sync_install = false,
+    -- enable syntax highlighting
     highlight = {
         enable = true,
-        disable = { "lua" },
     },
+    -- enable indentation
+    indent = { enable = true },
+    -- enable autotagging (w/ nvim-ts-autotag plugin)
+    autotag = { enable = true },
+    -- ensure these language parsers are installed
+    ensure_installed = {
+        "json",
+        "javascript",
+        "typescript",
+        "tsx",
+        "yaml",
+        "html",
+        "css",
+        "markdown",
+        "markdown_inline",
+        "c",
+        "cpp",
+    },
+    -- auto install above language parsers
+    auto_install = true,
 })
