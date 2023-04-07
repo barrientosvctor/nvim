@@ -58,14 +58,12 @@ for key, value in pairs(global) do
     vim.g[key] = value
 end
 
-if vim.fn.has("win32") then
+if vim.fn.has("win32") == 1 then
     vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
     vim.opt.undodir = "$env:LOCALAPPDATA/nvim/undodir"
-end
-
-if vim.fn.has("macunix") then
+elseif vim.fn.has("unix") == 1 then
     vim.opt.clipboard:append { "unnamedplus" }
-    vim.opt.undodir = "$HOME/.config/nvim/undodir"
+    vim.opt.undodir = "~/.config/nvim/undodir"
 end
 
 require("config.requires")
