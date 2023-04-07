@@ -1,11 +1,27 @@
 local status, packer = pcall(require, "packer")
 
+function install_packer()
+    print("Packer.nvim is installing...")
+
+    local packer_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+    vim.fn.system {
+        'git',
+        'clone',
+        '--depth',
+        '1',
+        'https://github.com/wbthomason/packer.nvim',
+        packer_path,
+    }
+
+    print("Packer.nvim were installed, restart their Neovim.")
+end
+
 if (not status) then
-    print("Packer.nvim is not installed.")
+    install_packer()
     return
 end
 
-packer.startup(function(use)
+return packer.startup(function(use)
     use "wbthomason/packer.nvim"
 
     -- Improve nvim speed
