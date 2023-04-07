@@ -5,8 +5,6 @@
 * [Python](https://www.python.org/downloads/) >= 3.10.5 version
 * [Node.js](https://nodejs.org/en/)
 * [Git](https://git-scm.com/)
-* [Chocolatey](https://chocolatey.org/) (Only for Windows users)
-* [Homebrew](https://brew.sh/) (Only for Unix users)
 * mingw: This is necessary for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter). [Unix installation](https://formulae.brew.sh/formula/mingw-w64#default) / [Windows installation](https://community.chocolatey.org/packages/mingw)
 
 ## Neovim config
@@ -38,6 +36,13 @@
 
 2. Install plugins with `:PackerInstall`
 
-3. Type this commands: `:LspInstall tsserver pyright clangd`
+3. Type this command: `:LspInstall tsserver pyright clangd jsonls`
+
+**Note:** If you install a new LSP and it doesn't work, you should add the LSP name in [lspconfig.lua](/lua/after/plugin/lspconfig.lua) file
+
+```lua
+-- ///////////////// MODIFY THIS LIST EVERY TIME YOU WANT TO INSTALL A NEW LSP //////////////////
+local servers = { "tsserver", "pyright", "clangd", "jsonls" }
+```
 
 Enjoy!
