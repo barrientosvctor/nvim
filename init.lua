@@ -37,8 +37,7 @@ local options = {
     -- Backup
     swapfile = false,
     backup = false,
-    undofile = true,
-    undodir = "undodir", -- folder name where is located undo files into nvim folder
+    undofile = true, -- undodir = ~/.local/state/nvim/undo/
 
     -- Other
     guicursor = "n-i-v-c:block",
