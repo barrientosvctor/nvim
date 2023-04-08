@@ -13,7 +13,7 @@
 
 **Note:** Before the plugins installation, you need install [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
-[Catppuccin.nvim](https://github.com/catppuccin/nvim) - Colorscheme for Neovim.
+* [catppuccin.nvim](https://github.com/catppuccin/nvim) - Colorscheme for Neovim.
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP.
 * [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP Installer.
     * It requires [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
