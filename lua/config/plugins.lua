@@ -28,10 +28,9 @@ return packer.startup(function(use)
     use "lewis6991/impatient.nvim"
 
     -- Customization
-    use "tjdevries/colorbuddy.nvim"
     use "nvim-tree/nvim-web-devicons"
-    use "svrana/neosolarized.nvim"
     use "nvim-lualine/lualine.nvim"
+    use "catppuccin/nvim"
 
     -- LSP
     use "neovim/nvim-lspconfig"
