@@ -30,6 +30,7 @@
 * [impatient.nvim](https://github.com/lewis6991/impatient.nvim) - Improve startup time in Neovim.
 * [nvim-autotag](https://github.com/windwp/nvim-ts-autotag) | [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Automate brackets and tag.
 * [comment.nvim](https://github.com/numToStr/Comment.nvim) - Powerful comment plugin for Neovim.
+* [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git integration for buffers into Neovim.
 
 ## Neovim setup
 
