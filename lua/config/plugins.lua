@@ -1,6 +1,6 @@
 local status, packer = pcall(require, "packer")
 
-function install_packer()
+local install_packer = function()
     print("Packer.nvim is installing...")
 
     local packer_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -59,11 +59,12 @@ return packer.startup(function(use)
     -- Tree
     use {
         "nvim-telescope/telescope.nvim", tag = "0.1.1",
-        requires = { {"nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim"} }
+        requires = { { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" } }
     }
 
     -- Utils
     use "gpanders/editorconfig.nvim"
     use "windwp/nvim-ts-autotag"
     use "windwp/nvim-autopairs"
+    use "numToStr/Comment.nvim"
 end)

@@ -13,6 +13,7 @@ require("after.plugin.lspsaga")
 require("after.plugin.editorconfig")
 require("after.plugin.telescope")
 require("after.plugin.autopairs")
+require("after.plugin.comment")
 
 require("after.plugin.catppuccin")
 require("after.plugin.lualine")

@@ -29,6 +29,7 @@
 * [editorconfig.nvim](https://github.com/gpanders/editorconfig.nvim) - Editorconfig allows set defaults rules for specifics file extensions or global files.
 * [impatient.nvim](https://github.com/lewis6991/impatient.nvim) - Improve startup time in Neovim.
 * [nvim-autotag](https://github.com/windwp/nvim-ts-autotag) | [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Automate brackets and tag.
+* [comment.nvim](https://github.com/numToStr/Comment.nvim) - Powerful comment plugin for Neovim.
 
 ## Neovim setup
 
@@ -36,13 +37,13 @@
 
 2. Install plugins with `:PackerInstall`
 
-3. Type this command: `:LspInstall tsserver pyright clangd jsonls`
+3. Type this command: `:LspInstall tsserver pyright clangd jsonls lua_ls`
 
 **Note:** If you install a new LSP and it doesn't work, you should add the LSP name in [lspconfig.lua](/lua/after/plugin/lspconfig.lua) file
 
 ```lua
 -- ///////////////// MODIFY THIS LIST EVERY TIME YOU WANT TO INSTALL A NEW LSP //////////////////
-local servers = { "tsserver", "pyright", "clangd", "jsonls" }
+local servers = { "tsserver", "pyright", "clangd", "jsonls", "lua_ls" }
 ```
 
 Enjoy!
