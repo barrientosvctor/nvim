@@ -16,5 +16,5 @@ require("after.plugin.telescope")
 require("after.plugin.autopairs")
 require("after.plugin.comment")
 
-require("after.plugin.catppuccin")
+require("after.plugin.ayu")
 require("after.plugin.lualine")
