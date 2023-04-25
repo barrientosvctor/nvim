@@ -18,3 +18,4 @@ require("after.plugin.comment")
 
 require("after.plugin.ayu")
 require("after.plugin.lualine")
+require("after.plugin.bufferline")

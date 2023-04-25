@@ -41,3 +41,8 @@ keymap("n", "ññ", ":Lspsaga hover_doc<CR>", options)
 keymap("n", "gd", ":Lspsaga lsp_finder<CR>", options)
 keymap("n", "gp", ":Lspsaga preview_definition<CR>", options)
 keymap("n", "ff", ":Lspsaga code_action<CR>", options)
+
+-- Bufferline
+keymap("n", "<leader>df", ":BufferLineCycleNext<cr>", options)
+keymap("n", "<leader>fd", ":BufferLineCyclePrev<cr>", options)
+keymap("n", "<leader>dc", ":bdelete<cr>", options)
