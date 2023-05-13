@@ -30,7 +30,8 @@ return packer.startup(function(use)
     -- Customization
     use "nvim-tree/nvim-web-devicons"
     use "nvim-lualine/lualine.nvim"
-    use "Shatur/neovim-ayu"
+    use "wuelnerdotexe/vim-enfocado"
+    use "shaunsingh/nord.nvim"
 
     -- LSP
     use "neovim/nvim-lspconfig"
