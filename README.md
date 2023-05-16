@@ -15,6 +15,7 @@
 
 * [ayu.nvim](https://github.com/Shatur/neovim-ayu) - Colorscheme for Neovim.
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP.
+* [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) - Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
 * [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP Installer.
     * It requires [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion engine plugin for neovim written in Lua. Completion sources are installed from external repositories and "sourced".
@@ -40,7 +41,11 @@
 
 3. Type this command: `:LspInstall tsserver pyright clangd jsonls lua_ls`
 
-**Note:** If you install a new LSP and it doesn't work, you should add the LSP name in [lspconfig.lua](/lua/after/plugin/lspconfig.lua) file
+**Notes:**
+
+* If you install a new LSP and it doesn't work, you should add the LSP name in [lspconfig.lua](/lua/after/plugin/lspconfig.lua) file
+
+* To install linters and formatters for Null LS, make use of `:Mason` command to install them through it.
 
 ```lua
 -- ///////////////// MODIFY THIS LIST EVERY TIME YOU WANT TO INSTALL A NEW LSP //////////////////
