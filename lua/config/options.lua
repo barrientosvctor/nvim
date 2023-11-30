@@ -43,11 +43,12 @@ local options = {
     guicursor = "n-i-v-c:block",
     backspace = "indent,eol,start",
     hidden = true,
-    scrolloff = 10,
+    scrolloff = 5,
 }
 
 local global = {
-    mapleader = ","
+    mapleader = ",",
+    editorconfig = true
 }
 
 for key, value in pairs(options) do
