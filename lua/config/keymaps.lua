@@ -30,19 +30,7 @@ keymap("n", "te", ":tabedit<cr>", options)
 -- Normal mode in terminal mode
 keymap("t", "<leader>zz", "<C-\\><C-n>", options)
 
--- Telescope
-keymap("n", "<F2>", ":Telescope file_browser<cr>", options)
-keymap("n", "<F3>", ":Telescope find_files<cr>", options)
-keymap("n", "<F4>", ":Telescope live_grep<cr>", options)
-
--- Lspsaga
-keymap("n", "ñd", ":Lspsaga diagnostic_jump_next<CR>", options)
-keymap("n", "ññ", ":Lspsaga hover_doc<CR>", options)
-keymap("n", "gd", ":Lspsaga lsp_finder<CR>", options)
-keymap("n", "gp", ":Lspsaga preview_definition<CR>", options)
-keymap("n", "ff", ":Lspsaga code_action<CR>", options)
-
--- Bufferline
-keymap("n", "<leader>df", ":BufferLineCycleNext<cr>", options)
-keymap("n", "<leader>fd", ":BufferLineCyclePrev<cr>", options)
+-- Move between buffers
+keymap("n", "<leader>df", ":bnext<cr>", options)
+keymap("n", "<leader>fd", ":bprev<cr>", options)
 keymap("n", "<leader>dc", ":bdelete<cr>", options)
