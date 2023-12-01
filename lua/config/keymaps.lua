@@ -1,41 +1,34 @@
-local keymap = vim.api.nvim_set_keymap
-
----advanced keymap options
----@param description string
----@return table
-local function keymapOptions(description)
-    return { silent = true, noremap = true, desc = (description or "") }
-end
+local key = require("utils.KeymapBuilder")
 
 -- Split windows
-keymap("n", "ty", ":vsp<cr><C-w>l", keymapOptions("Split vertical window"))
-keymap("n", "tx", ":split<cr><C-w>j", keymapOptions("Split horizontal window"))
+key.map("n", "ty", ":vsp<cr><C-w>l", "Split vertical window")
+key.map("n", "tx", ":split<cr><C-w>j", "Split horizontal window")
 
 -- Open terminal
-keymap("n", "th", ":botright new <Bar> :term<cr>", keymapOptions("Open horizontal terminal"))
-keymap("n", "tv", ":botright vnew <Bar> :term<cr>", keymapOptions("Open vertical terminal"))
+key.map("n", "th", ":botright new <Bar> :term<cr>", "Open horizontal terminal")
+key.map("n", "tv", ":botright vnew <Bar> :term<cr>", "Open vertical terminal")
 
 -- Select all
-keymap("n", "<c-a>", "gg<S-v>G", keymapOptions("Select all on a buffer"))
+key.map("n", "<c-a>", "gg<S-v>G", "Select all on a buffer")
 
 -- Move between windows
-keymap("", "<C-h>", "<C-w>h", keymapOptions("Move to left window"))
-keymap("", "<C-j>", "<C-w>j", keymapOptions("Move to bottom window"))
-keymap("", "<C-k>", "<C-w>k", keymapOptions("Move to up window"))
-keymap("", "<C-l>", "<C-w>l", keymapOptions("Move to right window"))
+key.map("", "<C-h>", "<C-w>h", "Move to left window")
+key.map("", "<C-j>", "<C-w>j", "Move to bottom window")
+key.map("", "<C-k>", "<C-w>k", "Move to up window")
+key.map("", "<C-l>", "<C-w>l", "Move to right window")
 
 -- Resize windows
-keymap("n", "t<left>", "<C-w>>", keymapOptions("Resize to left"))
-keymap("n", "t<right>", "<C-w><", keymapOptions("Resize to right"))
-keymap("n", "t<up>", "<C-w>+", keymapOptions("Resize to up"))
-keymap("n", "t<down>", "<C-w>-", keymapOptions("Resize to down"))
+key.map("n", "t<left>", "<C-w>>", "Resize to left")
+key.map("n", "t<right>", "<C-w><", "Resize to right")
+key.map("n", "t<up>", "<C-w>+", "Resize to up")
+key.map("n", "t<down>", "<C-w>-", "Resize to down")
 
 -- New tab
-keymap("n", "te", ":tabedit<cr>", keymapOptions("Open a new tab"))
+key.map("n", "te", ":tabedit<cr>", "Open a new tab")
 
-keymap("t", "<leader>zz", "<C-\\><C-n>", keymapOptions("Pass from insert mode to normal mode in terminal mode"))
+key.map("t", "<leader>zz", "<C-\\><C-n>", "Pass from insert mode to normal mode in terminal mode")
 
 -- Move between buffers
-keymap("n", "<leader>df", ":bnext<cr>", keymapOptions("Move to next buffer"))
-keymap("n", "<leader>fd", ":bprev<cr>", keymapOptions("Move to previous buffer"))
-keymap("n", "<leader>dc", ":bdelete<cr>", keymapOptions("Delete the actual buffer"))
+key.map("n", "<leader>df", ":bnext<cr>", "Move to next buffer")
+key.map("n", "<leader>fd", ":bprev<cr>", "Move to previous buffer")
+key.map("n", "<leader>dc", ":bdelete<cr>", "Delete the actual buffer")
