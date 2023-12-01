@@ -1,4 +1,4 @@
-local key = require("utils.KeymapBuilder")
+local key = require("utils.keymap")
 
 return {
     -- LSP Configuration & Plugins

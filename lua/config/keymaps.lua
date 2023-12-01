@@ -1,4 +1,4 @@
-local key = require("utils.KeymapBuilder")
+local key = require("utils.keymap")
 
 -- Split windows
 key.map("n", "ty", ":vsp<cr><C-w>l", "Split vertical window")
