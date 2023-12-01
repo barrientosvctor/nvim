@@ -1,5 +1,17 @@
 local function chooseShell()
-    if vim.fn.has "win32" == 1 then return "powershell.exe" else return "bash" end
+    if vim.fn.has "win32" == 1 then
+        if vim.fn.executable "pwsh" == 1 then
+            return "pwsh.exe"
+        elseif vim.fn.executable "powershell" == 1 then
+            return "powershell.exe"
+        else
+            return "cmd.exe"
+        end
+    else
+        if vim.fn.has "unix" == 1 or vim.fn.has "macos" == 1 then
+            return "bash"
+        end
+    end
 end
 
 local options = {
