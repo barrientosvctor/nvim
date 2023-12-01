@@ -1,3 +1,7 @@
+local function chooseShell()
+    if vim.fn.has "win32" == 1 then return "powershell.exe" else return "bash" end
+end
+
 local options = {
     -- Basic config
     background = "dark",
@@ -12,7 +16,7 @@ local options = {
     colorcolumn = "80",
 
     -- Spaces / indents
-    sw = 4, -- Spaces
+    sw = 4,    -- Spaces
     cindent = true,
     ai = true, -- Auto indent
     si = true, -- Smart indent
@@ -44,6 +48,9 @@ local options = {
     backspace = "indent,eol,start",
     hidden = true,
     scrolloff = 5,
+
+    -- Terminal
+    shell = chooseShell()
 }
 
 local global = {
