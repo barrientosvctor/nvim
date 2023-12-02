@@ -5,7 +5,8 @@ return {
     tag = "0.1.5",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope-file-browser.nvim"
+        "nvim-telescope/telescope-file-browser.nvim",
+        "nvim-telescope/telescope-media-files.nvim"
     },
     config = function()
         local telescope_file_browser_actions = require "telescope._extensions.file_browser.actions"
@@ -57,11 +58,17 @@ return {
                             ["?"] = "which_key",
                         },
                     }
+                },
+                media_files = {
+                    filetypes = { "png", "webp", "jpg", "jpeg" },
+                    -- find command (defaults to `fd`)
+                    find_cmd = "rg"
                 }
             },
         })
 
         require "telescope".load_extension "file_browser"
+        require "telescope".load_extension "media_files"
 
         local builtin = require "telescope.builtin"
         key.map("n", "<leader>ff", builtin.find_files, "[F]ind [F]iles via telescope")
@@ -70,5 +77,7 @@ return {
         key.map("n", "<leader>fh", builtin.help_tags, "Search into all nvim [H]elp documentation via telescope")
         key.map("n", "<leader>fv", require "telescope".extensions.file_browser.file_browser,
             "Search into all nvim [H]elp documentation via telescope")
+        key.map("n", "<leader>fm", require "telescope".extensions.media_files.media_files,
+            "Search all [M]edia via telescope")
     end
 }
