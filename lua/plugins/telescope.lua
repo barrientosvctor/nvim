@@ -15,7 +15,7 @@ return {
                 layout_strategy = "horizontal",
                 layout_config = {
                     height = 0.70,
-                    width = 0.70,
+                    width = 0.80,
                     preview_cutoff = 120,
                 }
             },
