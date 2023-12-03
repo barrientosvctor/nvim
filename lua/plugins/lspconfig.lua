@@ -19,6 +19,8 @@ return {
         -- Additional lua configuration, makes nvim stuff amazing!
         { "folke/neodev.nvim", opts = {} },
     },
+    lazy = true,
+    event = "BufReadPost",
     config = function()
         -- [[ Configure LSP ]]
         --  This function gets run when an LSP connects to a particular buffer.

@@ -12,7 +12,8 @@ return {
         -- Adds a number of user-friendly snippets
         'rafamadriz/friendly-snippets',
     },
-
+    lazy = true,
+    event = "BufReadPost",
     config = function()
         -- [[ Configure nvim-cmp ]]
         -- See `:help cmp`
