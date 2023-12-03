@@ -1,11 +1,53 @@
-local key = require "utils.keymap"
-
 return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-file-browser.nvim"
+    },
+    lazy = true,
+    event = "VeryLazy",
+    keys = {
+        {
+            "<leader>ff",
+            function()
+                require "telescope.builtin".find_files()
+            end,
+            mode = "n",
+            desc = "[F]ind [F]iles via telescope"
+        },
+        {
+            "<leader>fg",
+            function()
+                require "telescope.builtin".live_grep()
+            end,
+            mode = "n",
+            desc = "Uses live [G]rep via telescope"
+        },
+        {
+            "<leader>fb",
+            function()
+                require "telescope.builtin".buffers()
+            end,
+            mode = "n",
+            desc = "Lists open [B]uffers via telescope"
+        },
+        {
+            "<leader>fh",
+            function()
+                require "telescope.builtin".help_tags()
+            end,
+            mode = "n",
+            desc = "Search into all nvim [H]elp documentation via telescope"
+        },
+        {
+            "<leader>fv",
+            function()
+                require "telescope".extensions.file_browser.file_browser()
+            end,
+            mode = "n",
+            desc = "Open the Telescope's file browser"
+        }
     },
     config = function()
         local telescope_file_browser_actions = require "telescope._extensions.file_browser.actions"
@@ -62,13 +104,5 @@ return {
         })
 
         require "telescope".load_extension "file_browser"
-
-        local builtin = require "telescope.builtin"
-        key.map("n", "<leader>ff", builtin.find_files, "[F]ind [F]iles via telescope")
-        key.map("n", "<leader>fg", builtin.live_grep, "Uses live [G]rep via telescope")
-        key.map("n", "<leader>fb", builtin.buffers, "Lists open [B]uffers via telescope")
-        key.map("n", "<leader>fh", builtin.help_tags, "Search into all nvim [H]elp documentation via telescope")
-        key.map("n", "<leader>fv", require "telescope".extensions.file_browser.file_browser,
-            "Search into all nvim [H]elp documentation via telescope")
     end
 }
