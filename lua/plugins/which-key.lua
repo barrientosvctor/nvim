@@ -1,5 +1,7 @@
 return {
     "folke/which-key.nvim",
+    lazy = true,
+    event = "VeryLazy",
     config = function()
         require("which-key").register {
             ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
