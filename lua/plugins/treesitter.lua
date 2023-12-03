@@ -5,6 +5,8 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
         "windwp/nvim-ts-autotag",
     },
+    lazy = true,
+    event = "BufReadPost",
     build = ":TSUpdate",
     config = function()
         vim.defer_fn(function()
