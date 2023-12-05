@@ -32,7 +32,9 @@ key.map("t", "<C-j>", "<C-\\><C-n><C-w>j", "Move to bottom window in terminal mo
 key.map("t", "<C-k>", "<C-\\><C-n><C-w>k", "Move to up window in terminal mode")
 key.map("t", "<C-l>", "<C-\\><C-n><C-w>l", "Move to right window in terminal mode")
 
--- Move between buffers
-key.map("n", "<leader>df", ":bnext<cr>", "Move to next buffer")
-key.map("n", "<leader>fd", ":bprev<cr>", "Move to previous buffer")
+-- Delete buffer
 key.map("n", "<leader>dc", ":bdelete<cr>", "Delete the actual buffer")
+
+-- Inspect treesitter elements
+key.map("n", "<leader>ww", ":Inspect<cr>", "Inspect the treesitter element inside cursor")
+key.map("n", "<leader>wq", ":InspectTree<cr>", "Inspect the treesitter tree elements into the file")
