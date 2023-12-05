@@ -1,5 +1,9 @@
+local M = {}
+
+
 -- Modify every time you want to include some lsp to mason's automatic installation
-LSP_SERVERS = {
+-- To see the setup for any lsp look this: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+M.servers = {
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -18,3 +22,5 @@ LSP_SERVERS = {
         }
     },
 }
+
+return M
