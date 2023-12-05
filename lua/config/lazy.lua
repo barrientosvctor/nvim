@@ -11,4 +11,25 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+    defaults = { lazy = true },
+    performance = {
+        cache = { enabled = true },
+        -- To see all available rtp plugins, use :Lazy profile in rtp plugins section
+        rtp = {
+            disabled_plugins = {
+                "matchit",
+                -- "matchparen",
+                "netrwPlugin",
+                "gzip",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+                "spellfile",
+                "shada"
+            }
+        }
+    },
+    debug = false
+})

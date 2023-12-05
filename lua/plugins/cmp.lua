@@ -12,7 +12,8 @@ return {
         -- Adds a number of user-friendly snippets
         'rafamadriz/friendly-snippets',
     },
-
+    lazy = true,
+    event = "BufReadPost",
     config = function()
         -- [[ Configure nvim-cmp ]]
         -- See `:help cmp`
@@ -31,11 +32,9 @@ return {
                 completeopt = 'menu,menuone,noinsert'
             },
             mapping = cmp.mapping.preset.insert {
-                ['<C-n>'] = cmp.mapping.select_next_item(),
-                ['<C-p>'] = cmp.mapping.select_prev_item(),
-                ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                ['<C-Space>'] = cmp.mapping.complete {},
+                ['<C-d>'] = cmp.mapping.select_next_item(),
+                ['<C-f>'] = cmp.mapping.select_prev_item(),
+                ['<C-z>'] = cmp.mapping.complete {},
                 ['<CR>'] = cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
