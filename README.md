@@ -1,55 +1,47 @@
 # Victor's Neovim configuration
 
-## Pre-requeriments
-* [Neovim](https://neovim.io/) >= 0.8 version
-* [Python](https://www.python.org/downloads/) >= 3.10.5 version
-* [Node.js](https://nodejs.org/en/)
-* [Git](https://git-scm.com/)
-* mingw: This is necessary for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter). [Unix installation](https://formulae.brew.sh/formula/mingw-w64#default) / [Windows installation](https://community.chocolatey.org/packages/mingw)
+## Must-have requeriments
 
-## Neovim config
+* [Neovim](https://neovim.io/) >= **0.9.1** version.
 
-### Plugins
+## Suggested requeriments
 
-**Note:** Before the plugins installation, you need install [packer.nvim](https://github.com/wbthomason/packer.nvim).
+* [Python3](https://www.python.org/downloads/).
+* [git-scm](https://git-scm.com/) >= **2.19.0** version.
+* `tar` and `curl` commands in path for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
+* a C compiler: this is necessary for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (the compiler should be in path).
+* [ripgrep](https://github.com/BurntSushi/ripgrep): required for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)'s `live_grep` and `grep_string` commands.
 
-* [ayu.nvim](https://github.com/Shatur/neovim-ayu) - Colorscheme for Neovim.
-* [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP.
-* [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) - Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-* [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP Installer.
-    * It requires [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
-* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion engine plugin for neovim written in Lua. Completion sources are installed from external repositories and "sourced".
-* [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - A [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) source for neovim's built-in language server client.
-* [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua.
-* [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - These plugins allows create and use custom snippets.
-    * These plugins requires [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) and [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-* [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) - LSP UI.
-* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - telescope.nvim is a highly extendable fuzzy finder over lists.
-    * It requires [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) and [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
-* [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - Filetype icons for Neovim.
-* [editorconfig.nvim](https://github.com/gpanders/editorconfig.nvim) - Editorconfig allows set defaults rules for specifics file extensions or global files.
-* [impatient.nvim](https://github.com/lewis6991/impatient.nvim) - Improve startup time in Neovim.
-* [nvim-autotag](https://github.com/windwp/nvim-ts-autotag) | [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Automate brackets and tag.
-* [comment.nvim](https://github.com/numToStr/Comment.nvim) - Powerful comment plugin for Neovim.
-* [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git integration for buffers into Neovim.
+### Optional requeriments
 
-## Neovim setup
+* [fd](https://github.com/sharkdp/fd): for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)'s finder.
 
-1. Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
+## Installation
 
-2. Install plugins with `:PackerInstall`
+**1.** Clone repository.
 
-3. Type this command: `:LspInstall tsserver pyright clangd jsonls lua_ls`
+> Unix, Linux
 
-**Notes:**
-
-* If you install a new LSP and it doesn't work, you should add the LSP name in [lspconfig.lua](/lua/after/plugin/lspconfig.lua) file
-
-* To install linters and formatters for Null LS, make use of `:Mason` command to install them through it.
-
-```lua
--- ///////////////// MODIFY THIS LIST EVERY TIME YOU WANT TO INSTALL A NEW LSP //////////////////
-local servers = { "tsserver", "pyright", "clangd", "jsonls", "lua_ls" }
+```shell
+$ git clone --depth 1 https://github.com/barrientosvctor/nvim.git ~/.config/nvim
 ```
 
-Enjoy!
+> Windows Powershell
+
+```powershell
+$ git clone https://github.com/barrientosvctor/nvim.git "$env:LOCALAPPDATA\nvim"
+```
+
+**2.** Open Neovim.
+
+```shell
+$ nvim
+```
+
+## Notes
+
+### LSP
+
+* If you want to install a new language server. Make sure to first adding it to [lsp config](/lua/utils/lsp.lua) file. Then restart Neovim. The language server will download automatically and ready to use.
+
+If you don't know how to configure any language server, take a look at this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
