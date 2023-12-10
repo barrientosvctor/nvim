@@ -38,3 +38,5 @@ key.map("n", "<leader>dc", ":bdelete<cr>", "Delete the actual buffer")
 -- Inspect treesitter elements
 key.map("n", "<leader>ww", ":Inspect<cr>", "Inspect the treesitter element inside cursor")
 key.map("n", "<leader>wq", ":InspectTree<cr>", "Inspect the treesitter tree elements into the file")
+
+key.map("n", "<leader>we", ":color abyss<cr>", "Reload abyss.nvim")
