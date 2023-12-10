@@ -26,7 +26,8 @@ key.map("n", "t<down>", "<C-w>-", "Resize to down")
 -- New tab
 key.map("n", "te", ":tabedit<cr>", "Open a new tab")
 
--- Terminal movement
+-- Terminal
+key.map("t", "<leader>zz", "<C-\\><C-n>", "Exit from terminal mode to normal mode")
 key.map("t", "<C-h>", "<C-\\><C-n><C-w>h", "Move to left window in terminal mode")
 key.map("t", "<C-j>", "<C-\\><C-n><C-w>j", "Move to bottom window in terminal mode")
 key.map("t", "<C-k>", "<C-\\><C-n><C-w>k", "Move to up window in terminal mode")
