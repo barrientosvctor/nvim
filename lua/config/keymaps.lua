@@ -23,8 +23,10 @@ key.map("n", "t<right>", "<C-w><", "Resize to right")
 key.map("n", "t<up>", "<C-w>+", "Resize to up")
 key.map("n", "t<down>", "<C-w>-", "Resize to down")
 
--- New tab
+-- Tabs
 key.map("n", "te", ":tabedit<cr>", "Open a new tab")
+key.map("n", "tp", ":tabprevious<cr>", "Go to the previous tab")
+key.map("n", "tn", ":tabnext<cr>", "Go to the next tab")
 
 -- Terminal
 key.map("t", "<leader>zz", "<C-\\><C-n>", "Exit from terminal mode to normal mode")
