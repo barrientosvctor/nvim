@@ -39,7 +39,7 @@ return {
                 '[W]orkspace [S]ymbols', bufnr)
 
             key.bufmap('n', 'K', vim.lsp.buf.hover, 'Hover Documentation', bufnr)
-            key.bufmap('n', '<C-s>', vim.lsp.buf.signature_help, 'Signature Documentation', bufnr)
+            key.bufmap('i', '<C-s>', vim.lsp.buf.signature_help, 'Signature Documentation', bufnr)
 
             -- Lesser used LSP functionality
             key.bufmap('n', 'gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration', bufnr)
