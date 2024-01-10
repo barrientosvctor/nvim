@@ -6,7 +6,16 @@ local M = {}
 M.servers = {
     lua_ls = {
         Lua = {
-            workspace = { checkThirdParty = false },
+            diagnostics = {
+                globals = { "vim" },
+            },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.stdpath("config") .. "/lua"] = true,
+                },
+            },
             telemetry = { enable = false },
         },
     },
