@@ -30,6 +30,7 @@ M.servers = {
             },
         }
     },
+    cmake = {},
 }
 
 return M
