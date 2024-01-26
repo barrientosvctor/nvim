@@ -19,7 +19,7 @@ require("lazy").setup("plugins", {
         rtp = {
             disabled_plugins = {
                 "matchit",
-                -- "matchparen",
+                "matchparen",
                 "netrwPlugin",
                 "gzip",
                 "tarPlugin",
@@ -27,7 +27,8 @@ require("lazy").setup("plugins", {
                 "tutor",
                 "zipPlugin",
                 "spellfile",
-                "shada"
+                "shada",
+                "man"
             }
         }
     },
