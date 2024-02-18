@@ -37,22 +37,21 @@ return {
 
             key.bufmap('n', 'K', vim.lsp.buf.hover, 'Hover Documentation', bufnr)
             key.bufmap('i', '<C-s>', vim.lsp.buf.signature_help, 'Signature Documentation', bufnr)
+            key.bufmap('n', '<leader>dn', vim.diagnostic.goto_next, 'Go to [N]ext [D]iagnostic', bufnr)
+            key.bufmap('n', '<leader>dp', vim.diagnostic.goto_prev, 'Go to [P]revious [D]iagnostic', bufnr)
 
             -- Lesser used LSP functionality
             key.bufmap('n', 'gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration', bufnr)
             key.bufmap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder', bufnr)
             key.bufmap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder', bufnr)
 
-            -- auto format on save
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                callback = function(_)
+            vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
                     return vim.lsp.buf.format()
-                end
-            })
+                end,
+                { desc = "Auto format the actual buffer." })
         end
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
         local mason_lspconfig = require "mason-lspconfig"
 
