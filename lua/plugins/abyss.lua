@@ -1,6 +1,7 @@
 return {
-    "abyss.nvim",
-    dir = vim.fn.expand "$VIMRUNTIME" .. "/colors/abyss.nvim",
+    "barrientosvctor/abyss.nvim",
+    dev = true,
     lazy = false,
+    priority = 1000,
     opts = {}
 }

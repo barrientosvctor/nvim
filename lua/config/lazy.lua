@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
     defaults = { lazy = true },
+    dev = {
+        path = vim.fn.expand "~/projects/nvim",
+        pattern = { "barrientosvctor" }
+    },
     performance = {
         cache = { enabled = true },
         -- To see all available rtp plugins, use :Lazy profile in rtp plugins section
