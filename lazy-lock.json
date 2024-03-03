@@ -13,6 +13,7 @@
   "nvim-autopairs": { "branch": "master", "commit": "0f04d78619cce9a5af4f355968040f7d675854a1" },
   "nvim-cmp": { "branch": "main", "commit": "0b751f6beef40fd47375eaf53d3057e0bfa317e4" },
   "nvim-lspconfig": { "branch": "master", "commit": "fcf153fbbf1facd16a71d46b92be8be495123a9f" },
+  "nvim-treesitter": { "branch": "master", "commit": "e3e5ff4ebddcbfa8f5798253ebd1f9b449e8ee69" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "d7c453396a043c265bef1227920628e7b811ff30" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
