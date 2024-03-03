@@ -2,7 +2,7 @@
 
 ## Must-have requeriments
 
-* [Neovim](https://neovim.io/) >= **0.9.1** version.
+* [Neovim](https://neovim.io/) >= **0.9.2** version.
 
 ## Suggested requeriments
 
