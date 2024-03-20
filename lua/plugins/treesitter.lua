@@ -1,7 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     lazy = true,
-    event = "BufReadPost",
+    event = "VeryLazy",
     build = ":TSUpdate",
     config = function()
         vim.defer_fn(function()

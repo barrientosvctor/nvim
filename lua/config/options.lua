@@ -23,7 +23,7 @@ local options = {
     wrap = false,
     laststatus = 3,
     completeopt = "menu,menuone,noinsert,noselect",
-    showmode = false,
+    showmode = true,
     showcmd = false,
     colorcolumn = "80",
 

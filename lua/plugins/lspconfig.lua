@@ -13,9 +13,6 @@ return {
             },
             opts = {},
         },
-
-        -- Useful status updates for LSP
-        { "j-hui/fidget.nvim", opts = {} },
     },
     lazy = true,
     event = "BufReadPost",
