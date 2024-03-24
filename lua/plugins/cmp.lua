@@ -13,7 +13,7 @@ return {
         'rafamadriz/friendly-snippets',
     },
     lazy = true,
-    event = { "InsertEnter", "CmdlineEnter" },
+    event = "InsertEnter",
     config = function()
         -- [[ Configure nvim-cmp ]]
         -- See `:help cmp`
