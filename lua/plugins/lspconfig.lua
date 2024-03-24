@@ -4,6 +4,8 @@ local lsp = require("utils.lsp")
 return {
     -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
+    lazy = true,
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         -- Automatically install LSPs to stdpath for neovim
         {
@@ -11,11 +13,10 @@ return {
             dependencies = {
                 { "williamboman/mason-lspconfig.nvim", opts = {} },
             },
+            build = ":MasonUpdate",
             opts = {},
         },
     },
-    lazy = true,
-    event = "BufReadPost",
     config = function()
         -- [[ Configure LSP ]]
         --  This function gets run when an LSP connects to a particular buffer.
@@ -55,6 +56,7 @@ return {
 
         local mason_lspconfig = require "mason-lspconfig"
 
+        require("mason").setup()
         mason_lspconfig.setup {
             ensure_installed = vim.tbl_keys(lsp.servers),
         }
