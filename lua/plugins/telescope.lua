@@ -6,7 +6,7 @@ return {
         "nvim-telescope/telescope-file-browser.nvim"
     },
     lazy = true,
-    event = "VeryLazy",
+    cmd = "Telescope",
     keys = {
         {
             "<leader>ff",
