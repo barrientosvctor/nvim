@@ -1,0 +1,23 @@
+{
+    "Sample snippet creation": {
+        "prefix": "crsnip",
+        "body": [
+            "\"$1\": {",
+            "\"prefix\": \"$2\",",
+            "\"body\": [$4],",
+            "\"description\": \"$3\"",
+            "}$0"
+        ],
+        "description": "Create a snippet structure sample for vscode snippets."
+    },
+    "Import snippet file": {
+        "prefix": "addsnip",
+        "body": [
+            "{",
+            "\"language\": [$1],",
+            "\"path\": \"$2\"",
+            "}$0"
+        ],
+        "description": "Create the structure to add a snippet file in JSON."
+    }
+}

@@ -20,8 +20,16 @@ return {
         local cmp = require 'cmp'
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
         local luasnip = require 'luasnip'
+
+        luasnip.config.set_config {
+            history = true,
+            enable_autosnippets = true,
+        }
+
+        -- NOTE: the loader is called twice so it picks up the defaults first then my custom vscode snippets.
+        -- see: https://github.com/L3MON4D3/LuaSnip/issues/364
         require('luasnip.loaders.from_vscode').lazy_load()
-        luasnip.config.setup {}
+        require('luasnip.loaders.from_vscode').lazy_load({ paths = "./snippets" })
 
         local kind_icons = {
             Text = "",
