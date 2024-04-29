@@ -1,0 +1,18 @@
+{
+    "Create a abstract class extending another class": {
+        "prefix": "absclassex",
+        "body": [
+            "abstract class ${1:Class1} extends ${2:Class2} {$0",
+            "}"
+        ],
+        "description": "Create a abstract class extending another class."
+    },
+    "Create an abstract class": {
+        "prefix": "absclass",
+        "body": [
+            "abstract class ${1:Class1} {$0",
+            "}"
+        ],
+        "description": "Create an abstract class."
+    }
+}

@@ -8,6 +8,14 @@
       {
         "language": ["json"],
         "path": "./json.json"
+      },
+      {
+      "language": ["javascript", "typescript"],
+      "path": "./jsts.json"
+      },
+      {
+      "language": ["typescript"],
+      "path": "./typescript.json"
       }
     ]
   }
