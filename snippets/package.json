@@ -10,12 +10,12 @@
         "path": "./json.json"
       },
       {
-      "language": ["javascript", "typescript"],
-      "path": "./jsts.json"
+        "language": ["javascript", "typescript"],
+        "path": "./jsts.json"
       },
       {
-      "language": ["typescript"],
-      "path": "./typescript.json"
+        "language": ["typescript"],
+        "path": "./typescript.json"
       }
     ]
   }

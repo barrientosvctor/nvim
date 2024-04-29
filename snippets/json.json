@@ -3,9 +3,9 @@
         "prefix": "crsnip",
         "body": [
             "\"$1\": {",
-            "\"prefix\": \"$2\",",
-            "\"body\": [$4],",
-            "\"description\": \"$3\"",
+            "   \"prefix\": \"$2\",",
+            "   \"body\": [$4],",
+            "   \"description\": \"$3\"",
             "}$0"
         ],
         "description": "Create a snippet structure sample for vscode snippets."
@@ -14,8 +14,8 @@
         "prefix": "addsnip",
         "body": [
             "{",
-            "\"language\": [$1],",
-            "\"path\": \"$2\"",
+            "   \"language\": [$1],",
+            "   \"path\": \"$2\"",
             "}$0"
         ],
         "description": "Create the structure to add a snippet file in JSON."
