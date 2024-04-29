@@ -1,0 +1,10 @@
+{
+    "Create a class extending another class": {
+        "prefix": "classex",
+        "body": [
+            "class ${1:Class1} extends ${2:Class2} {$0",
+            "}"
+        ],
+        "description": "Create a class extending another class."
+    }
+}
