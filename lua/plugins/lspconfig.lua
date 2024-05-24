@@ -23,16 +23,6 @@ return {
         local on_attach = function(_, bufnr)
             key.bufmap('n', '<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame', bufnr)
             key.bufmap('n', '<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', bufnr)
-
-            key.bufmap('n', 'gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition', bufnr)
-            key.bufmap('n', 'gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences', bufnr)
-            key.bufmap('n', 'gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation', bufnr)
-            key.bufmap('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition', bufnr)
-            key.bufmap('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols',
-                bufnr)
-            key.bufmap('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols,
-                '[W]orkspace [S]ymbols', bufnr)
-
             key.bufmap('n', 'K', vim.lsp.buf.hover, 'Hover Documentation', bufnr)
             key.bufmap('i', '<C-s>', vim.lsp.buf.signature_help, 'Signature Documentation', bufnr)
             key.bufmap('n', '<leader>dn', vim.diagnostic.goto_next, 'Go to [N]ext [D]iagnostic', bufnr)

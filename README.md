@@ -3,6 +3,7 @@
 ## Must-have requeriments
 
 * [Neovim](https://neovim.io/) >= **0.9.2** version.
+* [Fzf](https://github.com/junegunn/fzf) > **0.24** version.
 
 ## Suggested requeriments
 
