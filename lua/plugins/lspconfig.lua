@@ -28,30 +28,12 @@ return {
             key.bufmap('n', '<leader>dn', vim.diagnostic.goto_next, 'Go to [N]ext [D]iagnostic', bufnr)
             key.bufmap('n', '<leader>dp', vim.diagnostic.goto_prev, 'Go to [P]revious [D]iagnostic', bufnr)
 
-            key.bufmap('n', 'gd', function()
-                require("fzf-lua").lsp_definitions()
-            end, '[G]oto [D]efinition', bufnr)
-
-            key.bufmap('n', 'gr', function()
-                require("fzf-lua").lsp_references()
-            end, '[G]oto [R]eferences', bufnr)
-
-            key.bufmap('n', 'gI', function()
-                require("fzf-lua").lsp_implementations()
-            end, '[G]oto [I]mplementation', bufnr)
-
-            key.bufmap('n', '<leader>D', function()
-                require("fzf-lua").lsp_typedefs()
-            end, 'Type [D]efinition', bufnr)
-
-            key.bufmap('n', '<leader>ds', function()
-                require("fzf-lua").lsp_document_symbols()
-            end, '[D]ocument [S]ymbols', bufnr)
-
-            key.bufmap('n', '<leader>ws', function()
-                require("fzf-lua").lsp_live_workspace_symbols()
-            end,
-                '[W]orkspace [S]ymbols', bufnr)
+	    key.bufmap('n', 'gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition', bufnr)
+	    key.bufmap('n', 'gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences', bufnr)
+	    key.bufmap('n', 'gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation', bufnr)
+	    key.bufmap('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition', bufnr)
+	    key.bufmap('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols', bufnr)
+	    key.bufmap('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols', bufnr)
 
             -- Lesser used LSP functionality
             key.bufmap('n', 'gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration', bufnr)
