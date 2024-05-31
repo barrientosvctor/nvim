@@ -1,10 +1,10 @@
 -- Split windows
-vim.keymap.set("n", "ty", ":vsp<cr><C-w>l")
-vim.keymap.set("n", "tx", ":split<cr><C-w>j")
+vim.keymap.set("n", "<leader>ty", ":vsp<cr><C-w>l")
+vim.keymap.set("n", "<leader>tx", ":split<cr><C-w>j")
 
 -- Open terminal
-vim.keymap.set("n", "th", ":botright new <Bar> :term<cr>")
-vim.keymap.set("n", "tv", ":botright vnew <Bar> :term<cr>")
+vim.keymap.set("n", "<leader>th", ":botright new <Bar> :term<cr>")
+vim.keymap.set("n", "<leader>tv", ":botright vnew <Bar> :term<cr>")
 
 -- Move between windows
 vim.keymap.set("", "<C-h>", "<C-w>h")
@@ -19,9 +19,9 @@ vim.keymap.set("n", "t<up>", "<C-w>+")
 vim.keymap.set("n", "t<down>", "<C-w>-")
 
 -- Tabs
-vim.keymap.set("n", "te", ":tabedit<cr>")
-vim.keymap.set("n", "tp", ":tabprevious<cr>")
-vim.keymap.set("n", "tn", ":tabnext<cr>")
+vim.keymap.set("n", "<leader>te", ":tabedit<cr>")
+vim.keymap.set("n", "<leader>tp", ":tabprevious<cr>")
+vim.keymap.set("n", "<leader>tn", ":tabnext<cr>")
 
 -- Terminal
 vim.keymap.set("t", "<leader>zz", "<C-\\><C-n>")
