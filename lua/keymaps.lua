@@ -6,9 +6,6 @@ vim.keymap.set("n", "tx", ":split<cr><C-w>j")
 vim.keymap.set("n", "th", ":botright new <Bar> :term<cr>")
 vim.keymap.set("n", "tv", ":botright vnew <Bar> :term<cr>")
 
--- Select all
-vim.keymap.set("n", "<c-a>", "gg<S-v>G")
-
 -- Move between windows
 vim.keymap.set("", "<C-h>", "<C-w>h")
 vim.keymap.set("", "<C-j>", "<C-w>j")
