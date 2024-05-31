@@ -72,6 +72,4 @@ elseif vim.fn.has("unix") == 1 then
     vim.opt.clipboard:append { "unnamedplus" }
 end
 
-vim.cmd.colorscheme "retrobox"
-
 require("keymaps")
