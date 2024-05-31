@@ -43,6 +43,3 @@
 [submodule "pack/plugins/start/gitsigns.nvim"]
 	path = pack/plugins/start/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
-[submodule "pack/plugins/start/fzf-lua"]
-	path = pack/plugins/start/fzf-lua
-	url = https://github.com/ibhagwan/fzf-lua
