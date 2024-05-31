@@ -1,0 +1,48 @@
+[submodule "pack/plugins/start/nvim-lspconfig"]
+	path = pack/plugins/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "pack/plugins/start/nvim-cmp"]
+	path = pack/plugins/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "pack/plugins/start/nvim-autopairs"]
+	path = pack/plugins/start/nvim-autopairs
+	url = https://github.com/windwp/nvim-autopairs
+[submodule "pack/plugins/start/LuaSnip"]
+	path = pack/plugins/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "pack/plugins/start/cmp_luasnip"]
+	path = pack/plugins/start/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "pack/plugins/start/cmp-nvim-lsp"]
+	path = pack/plugins/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "pack/plugins/start/friendly-snippets"]
+	path = pack/plugins/start/friendly-snippets
+	url = https://github.com/rafamadriz/friendly-snippets
+[submodule "pack/plugins/start/mason.nvim"]
+	path = pack/plugins/start/mason.nvim
+	url = https://github.com/williamboman/mason.nvim
+[submodule "pack/plugins/start/mason-lspconfig.nvim"]
+	path = pack/plugins/start/mason-lspconfig.nvim
+	url = https://github.com/williamboman/mason-lspconfig.nvim
+[submodule "pack/plugins/start/telescope.nvim"]
+	path = pack/plugins/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "pack/plugins/start/plenary.nvim"]
+	path = pack/plugins/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "pack/plugins/start/telescope-file-browser.nvim"]
+	path = pack/plugins/start/telescope-file-browser.nvim
+	url = https://github.com/nvim-telescope/telescope-file-browser.nvim
+[submodule "pack/plugins/start/nvim-treesitter"]
+	path = pack/plugins/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "pack/plugins/start/Comment.nvim"]
+	path = pack/plugins/start/Comment.nvim
+	url = https://github.com/numToStr/Comment.nvim
+[submodule "pack/plugins/start/gitsigns.nvim"]
+	path = pack/plugins/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/plugins/start/fzf-lua"]
+	path = pack/plugins/start/fzf-lua
+	url = https://github.com/ibhagwan/fzf-lua
