@@ -6,6 +6,12 @@ vim.keymap.set("n", "<leader>tx", ":split<cr><C-w>j")
 vim.keymap.set("n", "<leader>th", ":botright new <Bar> :term<cr>")
 vim.keymap.set("n", "<leader>tv", ":botright vnew <Bar> :term<cr>")
 
+-- Move between windows
+vim.keymap.set("", "<C-h>", "<C-w>h")
+vim.keymap.set("", "<C-j>", "<C-w>j")
+vim.keymap.set("", "<C-k>", "<C-w>k")
+vim.keymap.set("", "<C-l>", "<C-w>l")
+
 -- Resize windows
 vim.keymap.set("n", "t<left>", "<C-w>>")
 vim.keymap.set("n", "t<right>", "<C-w><")
