@@ -34,15 +34,11 @@ $ git clone https://github.com/barrientosvctor/nvim.git "$env:LOCALAPPDATA\nvim"
 
 **2.** Install Neovim submodules.
 
-```shell
-$ nvim
-```
-
 > Unix, Linux
 
 ```shell
-$ chmod u+x ./scripts/install.sh
-$ ./scripts/install.sh
+$ chmod u+x ./scripts/actions.sh
+$ ./scripts/actions.sh 1
 ```
 
 > Windows Powershell
