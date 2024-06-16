@@ -74,3 +74,5 @@ elseif vim.fn.has("unix") == 1 then
 end
 
 require("keymaps")
+
+vim.cmd.colorscheme "ayu"

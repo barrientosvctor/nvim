@@ -15,6 +15,11 @@ If (($Action -lt 1) -or ($Action -gt 3)) {
     git submodule init
     git submodule update
     Write-Host "Modules has been successfully installed!" -ForegroundColor Green
+    New-Item -ItemType Directory -Path colors
+    Invoke-WebRequest "https://raw.githubusercontent.com/ayu-theme/ayu-vim/master/colors/ayu.vim" -OutFile ".\colors\ayu.vim"
+    Invoke-WebRequest "https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim" -OutFile ".\colors\gruvbox.vim"
+    Invoke-WebRequest "https://raw.githubusercontent.com/nordtheme/vim/main/colors/nord.vim" -OutFile ".\colors\nord.vim"
+    Write-Host "Colors installed!"
 } ElseIf ($Action -eq 2) {
     git submodule update --remote
     Write-Host "Modules has been successfully updated to the latest release!" -ForegroundColor Green
