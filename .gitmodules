@@ -40,3 +40,9 @@
 [submodule "pack/plugins/start/gitsigns.nvim"]
 	path = pack/plugins/start/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/plugins/start/solarized.nvim"]
+	path = pack/plugins/start/solarized.nvim
+	url = https://github.com/maxmx03/solarized.nvim
+[submodule "pack/plugins/start/gruvbox.nvim"]
+	path = pack/plugins/start/gruvbox.nvim
+	url = https://github.com/ellisonleao/gruvbox.nvim
