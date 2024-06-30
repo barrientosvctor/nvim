@@ -4,9 +4,6 @@
 [submodule "pack/plugins/start/nvim-cmp"]
 	path = pack/plugins/start/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp
-[submodule "pack/plugins/start/nvim-autopairs"]
-	path = pack/plugins/start/nvim-autopairs
-	url = https://github.com/windwp/nvim-autopairs
 [submodule "pack/plugins/start/LuaSnip"]
 	path = pack/plugins/start/LuaSnip
 	url = https://github.com/L3MON4D3/LuaSnip
@@ -43,3 +40,6 @@
 [submodule "pack/plugins/start/gruvbox.nvim"]
 	path = pack/plugins/start/gruvbox.nvim
 	url = https://github.com/ellisonleao/gruvbox.nvim
+[submodule "pack/plugins/start/minipairs"]
+	path = pack/plugins/start/minipairs
+	url = https://github.com/echasnovski/mini.pairs

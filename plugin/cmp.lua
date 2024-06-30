@@ -1,5 +1,4 @@
 local cmp = require 'cmp'
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local luasnip = require 'luasnip'
 
 luasnip.config.set_config {
@@ -75,6 +74,3 @@ cmp.setup {
         { name = 'luasnip' },
     },
 }
-
--- Add parentheses after selecting function or method item
-cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
