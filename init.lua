@@ -1,3 +1,7 @@
+if vim.loader then
+    vim.loader.enable()
+end
+
 local function chooseShell()
     if vim.fn.has "win32" == 1 then
         if vim.fn.executable "pwsh" == 1 then
