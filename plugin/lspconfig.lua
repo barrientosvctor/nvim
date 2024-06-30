@@ -9,12 +9,12 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { buffer = bufnr })
     vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { buffer = bufnr })
 
-    vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, { buffer = bufnr })
-    vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { buffer = bufnr })
-    vim.keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, { buffer = bufnr })
+    vim.keymap.set('n', 'gd', ":FzfLua lsp_definitions<cr>", { buffer = bufnr })
+    vim.keymap.set('n', 'gr', ":FzfLua lsp_references<cr>", { buffer = bufnr })
+    vim.keymap.set('n', 'gI', ":FzfLua lsp_implementations<cr>", { buffer = bufnr })
+    vim.keymap.set('n', '<leader>D', ":FzfLua lsp_type_definitions<cr>", { buffer = bufnr })
+    vim.keymap.set('n', '<leader>ds', ":FzfLua lsp_document_symbols<cr>", { buffer = bufnr })
+    vim.keymap.set('n', '<leader>ws', ":FzfLua lsp_dynamic_workspace_symbols<cr>", { buffer = bufnr })
 
     -- Lesser used LSP functionality
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = bufnr })

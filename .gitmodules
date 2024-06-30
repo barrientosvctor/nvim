@@ -22,15 +22,6 @@
 [submodule "pack/plugins/start/mason-lspconfig.nvim"]
 	path = pack/plugins/start/mason-lspconfig.nvim
 	url = https://github.com/williamboman/mason-lspconfig.nvim
-[submodule "pack/plugins/start/telescope.nvim"]
-	path = pack/plugins/start/telescope.nvim
-	url = https://github.com/nvim-telescope/telescope.nvim
-[submodule "pack/plugins/start/plenary.nvim"]
-	path = pack/plugins/start/plenary.nvim
-	url = https://github.com/nvim-lua/plenary.nvim
-[submodule "pack/plugins/start/telescope-file-browser.nvim"]
-	path = pack/plugins/start/telescope-file-browser.nvim
-	url = https://github.com/nvim-telescope/telescope-file-browser.nvim
 [submodule "pack/plugins/start/nvim-treesitter"]
 	path = pack/plugins/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
@@ -43,3 +34,9 @@
 [submodule "pack/plugins/start/minipairs"]
 	path = pack/plugins/start/minipairs
 	url = https://github.com/echasnovski/mini.pairs
+[submodule "pack/plugins/start/nvimtree"]
+	path = pack/plugins/start/nvimtree
+	url = https://github.com/nvim-tree/nvim-tree.lua
+[submodule "pack/plugins/start/fzf"]
+	path = pack/plugins/start/fzf
+	url = https://github.com/ibhagwan/fzf-lua
