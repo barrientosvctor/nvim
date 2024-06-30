@@ -5,8 +5,4 @@ require("gruvbox").setup {
     }
 }
 
-require("solarized").setup {}
-
-require("abyss").setup {
-    bold = true
-}
+vim.cmd.colorscheme "gruvbox"
