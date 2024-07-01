@@ -1,3 +1,13 @@
+vim.g.loaded_gzip = 1 -- disable gzip
+vim.g.loaded_man = 1 -- disable man
+vim.g.loaded_remote_plugins = 1 -- disable rplugin
+vim.g.loaded_shada_plugin = 1 -- disable shada
+vim.g.loaded_spellfile_plugin = 1 -- disable spellfile
+vim.g.loaded_tarPlugin = 1 -- disable tarPlugin
+vim.g.loaded_2html_plugin = 1 -- disable tohtml
+vim.g.loaded_tutor_mode_plugin = 1 -- disable tutor
+-- vim.g.loaded_zipPlugin = 1 -- disable zipPlugin
+
 if vim.loader then
     vim.loader.enable()
 end
