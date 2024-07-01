@@ -37,4 +37,13 @@ vim.keymap.set("n", "<leader>dc", ":bdelete<cr>")
 vim.keymap.set("n", "<leader>ww", ":Inspect<cr>")
 vim.keymap.set("n", "<leader>wq", ":InspectTree<cr>")
 
-vim.keymap.set("n", "<leader>we", ":color abyss<cr>")
+-- Move line
+vim.keymap.set("n", "<C-S-Up>", ":move -2<cr>")
+vim.keymap.set("n", "<C-S-Down>", ":move +1<cr>")
+
+-- Source nvimrc file
+vim.keymap.set("n", "<leader>so", function()
+    -- To reload the file on the current buffer, type %
+    local target_file = vim.fn.input("File to refresh: ", vim.fn.stdpath("config") .. "/", "file")
+    vim.cmd("so " .. target_file)
+end)
