@@ -40,3 +40,12 @@
 [submodule "pack/plugins/start/fzf"]
 	path = pack/plugins/start/fzf
 	url = https://github.com/ibhagwan/fzf-lua
+[submodule "pack/plugins/start/nvim-dap"]
+	path = pack/plugins/start/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap
+[submodule "pack/plugins/start/nvim-dap-ui"]
+	path = pack/plugins/start/nvim-dap-ui
+	url = https://github.com/rcarriga/nvim-dap-ui
+[submodule "pack/plugins/start/nvim-nio"]
+	path = pack/plugins/start/nvim-nio
+	url = https://github.com/nvim-neotest/nvim-nio
