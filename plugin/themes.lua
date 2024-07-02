@@ -5,4 +5,6 @@ require("gruvbox").setup {
     }
 }
 
-vim.cmd.colorscheme "gruvbox"
+require("abyss").setup {
+    bold = true
+}
