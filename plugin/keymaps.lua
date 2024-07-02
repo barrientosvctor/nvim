@@ -43,7 +43,7 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
 vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l")
 
 -- Delete buffer
-vim.keymap.set("n", "<leader>dc", ":bdelete<cr>")
+vim.keymap.set("n", "<leader>bd", ":bdelete<cr>")
 
 -- Inspect treesitter elements
 vim.keymap.set("n", "<leader>ww", ":Inspect<cr>")
