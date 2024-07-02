@@ -86,5 +86,3 @@ if vim.fn.has("win32") == 1 then
 elseif vim.fn.has("unix") == 1 then
     vim.opt.clipboard:append { "unnamedplus" }
 end
-
-require("keymaps")

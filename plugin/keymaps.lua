@@ -3,8 +3,20 @@ vim.keymap.set("n", "<leader>ty", ":vsp<cr><C-w>l")
 vim.keymap.set("n", "<leader>tx", ":split<cr><C-w>j")
 
 -- Open terminal
-vim.keymap.set("n", "<leader>th", ":botright new <Bar> :term<cr>")
-vim.keymap.set("n", "<leader>tv", ":botright vnew <Bar> :term<cr>")
+vim.keymap.set("n", "<leader>th", function()
+    vim.cmd.new()
+    vim.cmd.wincmd "J"
+    vim.api.nvim_win_set_height(0, 12)
+    vim.wo.winfixheight = true
+    vim.cmd.term()
+end)
+vim.keymap.set("n", "<leader>tv", function()
+    vim.cmd.new()
+    vim.cmd.wincmd "L"
+    vim.api.nvim_win_set_width(0, 60)
+    vim.wo.winfixwidth = true
+    vim.cmd.term()
+end)
 
 -- Move between windows
 vim.keymap.set("", "<C-h>", "<C-w>h")
@@ -45,5 +57,6 @@ vim.keymap.set("n", "<C-S-Down>", ":move +1<cr>")
 vim.keymap.set("n", "<leader>so", function()
     -- To reload the file on the current buffer, type %
     local target_file = vim.fn.input("File to refresh: ", vim.fn.stdpath("config") .. "/", "file")
-    vim.cmd("so " .. target_file)
+    vim.cmd.source(target_file)
 end)
+
