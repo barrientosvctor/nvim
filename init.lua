@@ -6,7 +6,7 @@ vim.g.loaded_spellfile_plugin = 1 -- disable spellfile
 vim.g.loaded_tarPlugin = 1 -- disable tarPlugin
 vim.g.loaded_2html_plugin = 1 -- disable tohtml
 vim.g.loaded_tutor_mode_plugin = 1 -- disable tutor
--- vim.g.loaded_zipPlugin = 1 -- disable zipPlugin
+vim.g.loaded_zipPlugin = 1 -- disable zipPlugin
 
 if vim.loader then
     vim.loader.enable()
@@ -30,7 +30,6 @@ end
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
-vim.g.editorconfig = true
 
 -- Basic config
 vim.opt.background = "dark"
@@ -38,8 +37,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
-vim.opt.laststatus = 3
-vim.opt.completeopt = "menu,menuone,noinsert,noselect"
+vim.opt.completeopt:append { "menu", "menuone", "noinsert", "noselect" }
 vim.opt.showmode = true
 vim.opt.showcmd = false
 vim.opt.colorcolumn = "80"
@@ -53,15 +51,13 @@ vim.opt.breakindent = true
 
 -- Highlights
 vim.opt.cursorline = true
-vim.opt.winblend = 0
-vim.opt.wildoptions = "pum"
-vim.opt.pumblend = 5
 
 -- Search
 vim.opt.hlsearch = true
 vim.opt.showmatch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Encoding
 vim.opt.fileencoding = "utf-8"
@@ -73,8 +69,7 @@ vim.opt.backup = false
 vim.opt.undofile = true -- undodir = ~/.local/state/nvim/undo
 
 -- Other
-vim.opt.guicursor = "n-i-v-c:block"
-vim.opt.backspace = "indent,eol,start"
+vim.opt.backspace:append { "indent", "eol", "start" }
 vim.opt.hidden = true
 vim.opt.scrolloff = 5
 
