@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>tp", ":tabprevious<cr>")
 vim.keymap.set("n", "<leader>tn", ":tabnext<cr>")
 
 -- Terminal
-vim.keymap.set("t", "<leader>zz", "<C-\\><C-n>")
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h")
 vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j")
 vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
@@ -60,3 +60,5 @@ vim.keymap.set("n", "<leader>so", function()
     vim.cmd.source(target_file)
 end)
 
+-- Clear search highlights on pressing <Esc> in normal mode
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
