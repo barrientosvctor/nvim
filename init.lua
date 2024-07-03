@@ -51,6 +51,8 @@ vim.opt.breakindent = true
 
 -- Highlights
 vim.opt.cursorline = true
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Search
 vim.opt.hlsearch = true
@@ -81,3 +83,11 @@ if vim.fn.has("win32") == 1 then
 elseif vim.fn.has("unix") == 1 then
     vim.opt.clipboard:append { "unnamedplus" }
 end
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('dotfiles-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
