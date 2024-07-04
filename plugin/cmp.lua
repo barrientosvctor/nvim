@@ -35,7 +35,7 @@ cmp.setup {
         completeopt = 'menu,menuone,noinsert'
     },
     mapping = cmp.mapping.preset.insert {
-        ['<C-z>'] = cmp.mapping.complete {},
+        ['<C-f>'] = cmp.mapping.complete {},
         ['<CR>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 if luasnip.expandable() then
