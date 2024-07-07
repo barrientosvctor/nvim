@@ -391,8 +391,6 @@ cmp.setup {
     },
 }
 
-local telescope_file_browser_actions = require "telescope._extensions.file_browser.actions"
-
 require "telescope".setup({
     defaults = {
         layout_strategy = "horizontal",
@@ -421,39 +419,17 @@ require "telescope".setup({
             grouped = true,
             previewer = false,
             initial_mode = "normal",
-            mappings = {
-                ["i"] = {
-                    ["<C-e>"] = telescope_file_browser_actions.open,
-                    ["<C-c>"] = telescope_file_browser_actions.create,
-                    ["<C-t>"] = telescope_file_browser_actions.remove,
-                    ["<C-r>"] = telescope_file_browser_actions.rename,
-                    ["?"] = "which_key",
-                },
-            }
         }
     },
 })
 
 require "telescope".load_extension "file_browser"
 
-vim.keymap.set("n", "<leader>fg", function()
-    require "telescope.builtin".live_grep()
-end)
-
-vim.keymap.set("n", "<leader>ff", function()
-    require "telescope.builtin".find_files()
-end)
-
-vim.keymap.set("n", "<leader>fb", function()
-    require "telescope.builtin".buffers()
-end)
-
-vim.keymap.set("n", "<leader>fh", function()
-    require "telescope.builtin".help_tags()
-end)
-
-vim.keymap.set("n", "<leader>fv", function()
-    require "telescope".extensions.file_browser.file_browser()
-end)
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<cr>")
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<cr>")
+vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>")
+vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<cr>")
+vim.keymap.set("n", "<leader>fv", ":Telescope file_browser<cr>")
+vim.keymap.set("n", "<leader>fc", ":Telescope builtin<cr>")
 
 vim.cmd.colorscheme "gruvbox"
