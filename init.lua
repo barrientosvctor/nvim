@@ -14,6 +14,7 @@ vim.loader.enable()
 
 -- Local functions
 -- TODO: change shellcmdflags depending the given shell. :h 'shellcmdflag'
+-- Source: https://github.com/neovim/neovim/issues/13893
 local function chooseShell()
     if vim.fn.has "win32" == 1 then
         if vim.fn.executable "pwsh" == 1 then
