@@ -188,7 +188,7 @@ Plug("hrsh7th/cmp-nvim-lsp", { ["commit"] = "39e2eda" })
 Plug("hrsh7th/nvim-cmp", { ["commit"] = "a110e12" })
 
 -- Snippets
-Plug("L3MON4D3/LuaSnip", { ["tag"] = "v2.*" })
+Plug("L3MON4D3/LuaSnip", { ["tag"] = "v2.3.0" })
 Plug("saadparwaiz1/cmp_luasnip", { ["commit"] = "05a9ab2" })
 Plug("rafamadriz/friendly-snippets")
 
