@@ -176,27 +176,27 @@ Plug("ellisonleao/gruvbox.nvim")
 Plug("~/projects/nvim/abyss.nvim")
 
 -- Syntax highlighting
-Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
+Plug("nvim-treesitter/nvim-treesitter", { ["tag"] = "v0.9.2", ["do"] = ":TSUpdate" })
 
 -- LSP
-Plug("neovim/nvim-lspconfig")
-Plug("williamboman/mason.nvim")
-Plug("williamboman/mason-lspconfig.nvim")
-Plug("hrsh7th/cmp-nvim-lsp")
+Plug("neovim/nvim-lspconfig", { ["tag"] = "v0.1.8" })
+Plug("williamboman/mason.nvim", { ["tag"] = "v1.10.0" })
+Plug("williamboman/mason-lspconfig.nvim", { ["tag"] = "v1.29.0" })
+Plug("hrsh7th/cmp-nvim-lsp", { ["commit"] = "39e2eda" })
 
 -- Completion
-Plug("hrsh7th/nvim-cmp")
+Plug("hrsh7th/nvim-cmp", { ["commit"] = "a110e12" })
 
 -- Snippets
 Plug("L3MON4D3/LuaSnip", { ["tag"] = "v2.*" })
-Plug("saadparwaiz1/cmp_luasnip")
+Plug("saadparwaiz1/cmp_luasnip", { ["commit"] = "05a9ab2" })
 Plug("rafamadriz/friendly-snippets")
 
 -- Fuzzy finder / File explorer
 Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim", { ["tag"] = "0.1.8" })
-Plug("nvim-telescope/telescope-file-browser.nvim")
-Plug("nvim-telescope/telescope-fzf-native.nvim", { ["do"] = function()
+Plug("nvim-telescope/telescope-file-browser.nvim", { ["commit"] = "a7ab9a9" })
+Plug("nvim-telescope/telescope-fzf-native.nvim", { ["commit"] = "cf48d4d", ["do"] = function()
     if vim.fn.executable "make" == 1 then
         return "make"
     elseif vim.fn.executable "cmake" == 1 then
@@ -209,7 +209,7 @@ end
 
 -- Other
 Plug("echasnovski/mini.pairs", { ["branch"] = "stable" })
-Plug("lewis6991/gitsigns.nvim")
+Plug("lewis6991/gitsigns.nvim", { ["tag"] = "v0.9.0" })
 vim.call "plug#end"
 
 -- Plugins configuration
