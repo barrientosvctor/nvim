@@ -13,6 +13,7 @@ vim.g.loaded_zipPlugin = 1 -- disable zipPlugin
 vim.loader.enable()
 
 -- Local functions
+-- TODO: change shellcmdflags depending the given shell. :h 'shellcmdflag'
 local function chooseShell()
     if vim.fn.has "win32" == 1 then
         if vim.fn.executable "pwsh" == 1 then
