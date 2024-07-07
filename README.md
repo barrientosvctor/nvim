@@ -3,7 +3,6 @@
 ## Must-have requeriments
 
 * [Neovim](https://neovim.io/) >= **0.9.2** version.
-* [Fzf](https://github.com/junegunn/fzf) > **0.25**
 
 ## Suggested requeriments
 
@@ -11,11 +10,11 @@
 * [git-scm](https://git-scm.com/) >= **2.19.0** version.
 * `tar` and `curl` commands in path for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
 * a C compiler: this is necessary for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (the compiler should be in path).
-* [ripgrep](https://github.com/BurntSushi/ripgrep): required for [fzf-lua](https://github.com/ibhagwan/fzf-lua?tab=readme-ov-file#dependencies)'s `live_grep` and `tags_grep` commands.
+* [ripgrep](https://github.com/BurntSushi/ripgrep): required for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)'s `live_grep` and `tags_grep` commands.
 
 ### Optional requeriments
 
-* [fd](https://github.com/sharkdp/fd): for [fzf-lua](https://github.com/ibhagwan/fzf-lua?tab=readme-ov-file#dependencies)'s finder.
+* [fd](https://github.com/sharkdp/fd): for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)'s finder.
 
 ## Installation
 
@@ -52,6 +51,6 @@ $ ./scripts/actions.ps1 -Action 1
 
 ### LSP
 
-* If you want to install a new language server. Make sure to first adding it to [lsp config](/plugin/lspconfig.lua) file. Then restart Neovim. The language server will download automatically and ready to use.
+* If you want to install a new language server. Make sure to first adding it to [lsp config](/init.lua#L248) object. Then restart Neovim. The language server will download automatically and ready to use.
 
 If you don't know how to configure any language server, take a look at this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
