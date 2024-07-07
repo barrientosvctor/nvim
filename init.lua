@@ -103,18 +103,18 @@ vim.api.nvim_create_autocmd("TermOpen", {
 
 -- Keymaps
 -- Split windows
-vim.keymap.set("n", "<leader>ty", ":vsp<cr><C-w>l")
-vim.keymap.set("n", "<leader>tx", ":split<cr><C-w>j")
+vim.keymap.set("n", "<Leader>ty", "<Cmd>vsp<CR><C-w>l")
+vim.keymap.set("n", "<Leader>tx", "<Cmd>split<CR><C-w>j")
 
 -- Open terminal
-vim.keymap.set("n", "<leader>th", function()
+vim.keymap.set("n", "<Leader>th", function()
     vim.cmd.new()
     vim.cmd.wincmd "J"
     vim.api.nvim_win_set_height(0, 12)
     vim.wo.winfixheight = true
     vim.cmd.term()
 end)
-vim.keymap.set("n", "<leader>tv", function()
+vim.keymap.set("n", "<Leader>tv", function()
     vim.cmd.new()
     vim.cmd.wincmd "L"
     vim.api.nvim_win_set_width(0, 60)
@@ -135,9 +135,9 @@ vim.keymap.set("n", "t<up>", "<C-w>+")
 vim.keymap.set("n", "t<down>", "<C-w>-")
 
 -- Tabs
-vim.keymap.set("n", "<leader>te", ":tabedit<cr>")
-vim.keymap.set("n", "<leader>tp", ":tabprevious<cr>")
-vim.keymap.set("n", "<leader>tn", ":tabnext<cr>")
+vim.keymap.set("n", "<Leader>te", "<Cmd>tabedit<CR>")
+vim.keymap.set("n", "<Leader>tp", "<Cmd>tabprevious<CR>")
+vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnext<CR>")
 
 -- Terminal
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
@@ -147,18 +147,18 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
 vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l")
 
 -- Delete buffer
-vim.keymap.set("n", "<leader>bd", ":bdelete<cr>")
+vim.keymap.set("n", "<Leader>bd", "<Cmd>bdelete<CR>")
 
 -- Inspect treesitter elements
-vim.keymap.set("n", "<leader>ww", ":Inspect<cr>")
-vim.keymap.set("n", "<leader>wq", ":InspectTree<cr>")
+vim.keymap.set("n", "<Leader>ww", "<Cmd>Inspect<CR>")
+vim.keymap.set("n", "<Leader>wq", "<Cmd>InspectTree<CR>")
 
 -- Move line
-vim.keymap.set("n", "<C-S-Up>", ":move -2<cr>")
-vim.keymap.set("n", "<C-S-Down>", ":move +1<cr>")
+vim.keymap.set("n", "<C-S-Up>", "<Cmd>move -2<CR>")
+vim.keymap.set("n", "<C-S-Down>", "<Cmd>move +1<CR>")
 
 -- Source nvimrc file
-vim.keymap.set("n", "<leader>so", function()
+vim.keymap.set("n", "<Leader>so", function()
     -- To reload the file on the current buffer, type %
     local target_file = vim.fn.input("File to refresh: ", vim.fn.stdpath("config") .. "/", "file")
     vim.cmd.source(target_file)
@@ -267,24 +267,24 @@ local servers = {
 }
 
 local on_attach = function(_, bufnr)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
     vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next, { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev, { buffer = bufnr })
 
-    vim.keymap.set('n', 'gd', ":Telescope lsp_definitions<cr>", { buffer = bufnr })
-    vim.keymap.set('n', 'gr', ":Telescope lsp_references<cr>", { buffer = bufnr })
-    vim.keymap.set('n', 'gI', ":Telescope lsp_implementations<cr>", { buffer = bufnr })
-    vim.keymap.set('n', '<leader>D', ":Telescope lsp_type_definitions<cr>", { buffer = bufnr })
-    vim.keymap.set('n', '<leader>ds', ":Telescope lsp_document_symbols<cr>", { buffer = bufnr })
-    vim.keymap.set('n', '<leader>ws', ":Telescope lsp_dynamic_workspace_symbols<cr>", { buffer = bufnr })
+    vim.keymap.set('n', 'gd', "<Cmd>Telescope lsp_definitions<CR>", { buffer = bufnr })
+    vim.keymap.set('n', 'gr', "<Cmd>Telescope lsp_references<CR>", { buffer = bufnr })
+    vim.keymap.set('n', 'gI', "<Cmd>Telescope lsp_implementations<CR>", { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>D', "<Cmd>Telescope lsp_type_definitions<CR>", { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>ds', "<Cmd>Telescope lsp_document_symbols<CR>", { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>ws', "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>", { buffer = bufnr })
 
     -- Lesser used LSP functionality
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { buffer = bufnr })
-    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, { buffer = bufnr })
+    vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, { buffer = bufnr })
 
     vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
         return vim.lsp.buf.format()
@@ -425,11 +425,11 @@ require "telescope".setup({
 
 require "telescope".load_extension "file_browser"
 
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<cr>")
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<cr>")
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>")
-vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<cr>")
-vim.keymap.set("n", "<leader>fv", ":Telescope file_browser<cr>")
-vim.keymap.set("n", "<leader>fc", ":Telescope builtin<cr>")
+vim.keymap.set("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
+vim.keymap.set("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>")
+vim.keymap.set("n", "<Leader>fv", "<Cmd>Telescope file_browser<CR>")
+vim.keymap.set("n", "<Leader>fc", "<Cmd>Telescope builtin<CR>")
 
 vim.cmd.colorscheme "gruvbox"
