@@ -187,6 +187,11 @@ Plug("L3MON4D3/LuaSnip", { ["tag"] = "v2.3.0" })
 Plug("saadparwaiz1/cmp_luasnip", { ["commit"] = "05a9ab2" })
 Plug("rafamadriz/friendly-snippets")
 
+ -- DAP
+Plug("mfussenegger/nvim-dap", { ["tag"] = "0.8.0" })
+Plug("rcarriga/nvim-dap-ui", { ["tag"] = "v4.0.0" })
+Plug("nvim-neotest/nvim-nio", { ["tag"] = "v1.9.4" })
+
 -- Fuzzy finder / File explorer
 Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim", { ["tag"] = "0.1.8" })
@@ -418,5 +423,97 @@ vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 vim.keymap.set("n", "<Leader>fv", "<Cmd>Telescope file_browser<CR>")
 vim.keymap.set("n", "<Leader>fc", "<Cmd>Telescope builtin<CR>")
+
+-- Nvim DAP Config
+local dap = require('dap')
+
+-- DAP Adapters and Configurations
+local codelldb_path = vim.fn.exepath "codelldb"
+local js_debug_path = vim.fn.exepath "js-debug-adapter"
+
+dap.adapters.codelldb = {
+    type = 'server',
+    -- TODO: idk why appears refused connection
+    port = "${port}",
+    executable = {
+        -- CHANGE THIS to your path!
+        command = codelldb_path,
+        args = {"--port", "${port}"},
+
+        -- On windows you may have to uncomment this:
+        detached = false,
+    }
+}
+
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+    -- TODO: idk if specify port is needed.
+  port = "8123",
+  executable = {
+    command = "node",
+    -- 💀 Make sure to update this path to point to your installation
+    args = {js_debug_path, "${port}"},
+  }
+}
+
+dap.configurations.c = {
+    {
+        name = 'Launch file',
+        type = 'codelldb',
+        request = 'launch',
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+    },
+}
+
+dap.configurations.cpp = dap.configurations.c
+dap.configurations.rust = dap.configurations.c
+
+dap.configurations.javascript = {
+  {
+    type = "pwa-node",
+    request = "launch",
+    name = "Launch file",
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+  },
+}
+
+-- DAP UI
+local dapui = require("dapui")
+dapui.setup()
+
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated.dapui_config = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
+end
+
+-- Nvim DAP Keymaps
+vim.keymap.set("n", "<leader>du", dapui.toggle)
+vim.keymap.set("n", "<leader>dc", dapui.close)
+vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
+
+-- Eval var under the cursor
+vim.keymap.set("n", "<leader>?", function()
+    dapui.eval(nil, { enter = true })
+end)
+
+vim.keymap.set("n", "<f5>", dap.continue)
+vim.keymap.set("n", "<f10>", dap.step_over)
+vim.keymap.set("n", "<f11>", dap.step_into)
+vim.keymap.set("n", "<f12>", dap.step_out)
 
 vim.cmd.colorscheme "gruvbox"
