@@ -12,25 +12,6 @@ vim.g.loaded_zipPlugin = 1 -- disable zipPlugin
 -- Enable loader to increase performance
 vim.loader.enable()
 
--- Local functions
--- TODO: change shellcmdflags depending the given shell. :h 'shellcmdflag'
--- Source: https://github.com/neovim/neovim/issues/13893
-local function chooseShell()
-    if vim.fn.has "win32" == 1 then
-        if vim.fn.executable "pwsh" == 1 then
-            return "pwsh.exe"
-        elseif vim.fn.executable "powershell" == 1 then
-            return "powershell.exe"
-        else
-            return "cmd.exe"
-        end
-    else
-        if vim.fn.has "unix" == 1 or vim.fn.has "macos" == 1 then
-            return "bash"
-        end
-    end
-end
-
 -- Neovim options
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
@@ -81,7 +62,17 @@ vim.opt.scrolloff = 5
 vim.opt.clipboard:append { "unnamed", "unnamedplus" }
 
 -- Terminal
-vim.opt.shell = chooseShell()
+if vim.fn.has "win32" == 1 then
+    if vim.fn.executable "powershell" == 1 then
+        vim.opt.shell = vim.fn.exepath "powershell"
+        vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+        vim.opt.shellxquote = ""
+    else
+        vim.opt.shell = vim.fn.exepath "cmd"
+        vim.opt.shellcmdflag = "/s /c"
+        vim.opt.shellxquote = '"'
+    end
+end
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
