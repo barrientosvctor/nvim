@@ -62,11 +62,11 @@ vim.opt.scrolloff = 5
 vim.opt.clipboard:append { "unnamed", "unnamedplus" }
 
 -- Terminal
-if vim.fn.has "win32" == 1 and vim.fn.executable "powershell" == 1 then
-    vim.opt.shell = vim.fn.exepath "powershell"
-    vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
-    vim.opt.shellxquote = ""
-end
+-- if vim.fn.has "win32" == 1 and vim.fn.executable "powershell" == 1 then
+--     vim.opt.shell = vim.fn.exepath "powershell"
+--     vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+--     vim.opt.shellxquote = ""
+-- end
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -157,6 +157,14 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Vim Plug packages
 local Plug = vim.fn["plug#"]
 
+local telescope_fzf_native_cmd_installer = ""
+
+if vim.fn.executable "make" == 1 then
+    telescope_fzf_native_cmd_installer = "make"
+elseif vim.fn.executable "cmake" == 1 then
+    telescope_fzf_native_cmd_installer = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -G Ninja && cmake --build build --config Release"
+end
+
 vim.call "plug#begin"
 -- Colors
 Plug("ellisonleao/gruvbox.nvim")
@@ -183,16 +191,7 @@ Plug("rafamadriz/friendly-snippets")
 Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim", { ["tag"] = "0.1.8" })
 Plug("nvim-telescope/telescope-file-browser.nvim", { ["commit"] = "a7ab9a9" })
-Plug("nvim-telescope/telescope-fzf-native.nvim", { ["commit"] = "cf48d4d", ["do"] = function()
-    if vim.fn.executable "make" == 1 then
-        return "make"
-    elseif vim.fn.executable "cmake" == 1 then
-        return "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -G Ninja && cmake --build build --config Release"
-    else
-        return ""
-    end
-end
-})
+Plug("nvim-telescope/telescope-fzf-native.nvim", { ["commit"] = "cf48d4d", ["do"] = telescope_fzf_native_cmd_installer })
 
 -- Other
 Plug("echasnovski/mini.pairs", { ["branch"] = "stable" })
@@ -411,6 +410,7 @@ require "telescope".setup({
 })
 
 require "telescope".load_extension "file_browser"
+require "telescope".load_extension "fzf"
 
 vim.keymap.set("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>")
