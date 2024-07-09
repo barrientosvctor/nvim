@@ -165,10 +165,14 @@ elseif vim.fn.executable "cmake" == 1 then
     telescope_fzf_native_cmd_installer = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -G Ninja && cmake --build build --config Release"
 end
 
+local abyss_path = vim.fn.getenv "HOME" .. "/projects/nvim/abyss.nvim"
+
 vim.call "plug#begin"
 -- Colors
 Plug("ellisonleao/gruvbox.nvim")
-Plug("~/projects/nvim/abyss.nvim")
+if (vim.uv or vim.loop).fs_stat(abyss_path) then
+    Plug(abyss_path)
+end
 
 -- Syntax highlighting
 Plug("nvim-treesitter/nvim-treesitter", { ["tag"] = "v0.9.2", ["do"] = ":TSUpdate" })
