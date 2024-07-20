@@ -1,16 +1,16 @@
 -- Split windows
-vim.keymap.set("n", "<leader>ty", ":vsp<cr><C-w>l")
-vim.keymap.set("n", "<leader>tx", ":split<cr><C-w>j")
+vim.keymap.set("n", "<Leader>ty", "<Cmd>vsp<CR><C-w>l")
+vim.keymap.set("n", "<Leader>tx", "<Cmd>split<CR><C-w>j")
 
 -- Open terminal
-vim.keymap.set("n", "<leader>th", function()
+vim.keymap.set("n", "<Leader>th", function()
     vim.cmd.new()
     vim.cmd.wincmd "J"
     vim.api.nvim_win_set_height(0, 12)
     vim.wo.winfixheight = true
     vim.cmd.term()
 end)
-vim.keymap.set("n", "<leader>tv", function()
+vim.keymap.set("n", "<Leader>tv", function()
     vim.cmd.new()
     vim.cmd.wincmd "L"
     vim.api.nvim_win_set_width(0, 60)
@@ -31,9 +31,9 @@ vim.keymap.set("n", "t<up>", "<C-w>+")
 vim.keymap.set("n", "t<down>", "<C-w>-")
 
 -- Tabs
-vim.keymap.set("n", "<leader>te", ":tabedit<cr>")
-vim.keymap.set("n", "<leader>tp", ":tabprevious<cr>")
-vim.keymap.set("n", "<leader>tn", ":tabnext<cr>")
+vim.keymap.set("n", "<Leader>te", "<Cmd>tabedit<CR>")
+vim.keymap.set("n", "<Leader>tp", "<Cmd>tabprevious<CR>")
+vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnext<CR>")
 
 -- Terminal
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
@@ -43,22 +43,22 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
 vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l")
 
 -- Delete buffer
-vim.keymap.set("n", "<leader>bd", ":bdelete<cr>")
+vim.keymap.set("n", "<Leader>bd", "<Cmd>bdelete<CR>")
 
 -- Inspect treesitter elements
-vim.keymap.set("n", "<leader>ww", ":Inspect<cr>")
-vim.keymap.set("n", "<leader>wq", ":InspectTree<cr>")
+vim.keymap.set("n", "<Leader>ww", "<Cmd>Inspect<CR>")
+vim.keymap.set("n", "<Leader>wq", "<Cmd>InspectTree<CR>")
 
 -- Move line
-vim.keymap.set("n", "<C-S-Up>", ":move -2<cr>")
-vim.keymap.set("n", "<C-S-Down>", ":move +1<cr>")
+vim.keymap.set("n", "<C-S-Up>", "<Cmd>move -2<CR>")
+vim.keymap.set("n", "<C-S-Down>", "<Cmd>move +1<CR>")
 
 -- Source nvimrc file
-vim.keymap.set("n", "<leader>so", function()
+vim.keymap.set("n", "<Leader>so", function()
     -- To reload the file on the current buffer, type %
     local target_file = vim.fn.input("File to refresh: ", vim.fn.stdpath("config") .. "/", "file")
     vim.cmd.source(target_file)
 end)
 
 -- Clear search highlights on pressing <Esc> in normal mode
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<Esc>", "<Cmd>nohlsearch<CR>")
