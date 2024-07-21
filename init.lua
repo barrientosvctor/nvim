@@ -29,7 +29,6 @@ vim.opt.colorcolumn = "80"
 
 -- Spaces / indents
 vim.opt.sw = 4
-vim.opt.cindent = true
 vim.opt.ai = true -- Auto indent
 vim.opt.si = true -- Smart indent
 vim.opt.breakindent = true
