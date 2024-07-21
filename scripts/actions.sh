@@ -4,8 +4,9 @@ update="$1" || "0"
 
 if [[ $update -eq "1" ]];
 then
-    git submodule init
-    git submodule update
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+           https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    nvim --headless +PlugInstall +qa
 elif [[ $update -eq "2" ]];
 then
     git submodule update --remote
