@@ -1,4 +1,4 @@
--- Disable nvim built-in plugins
+-- ================ Disable nvim built-in plugins ================
 vim.g.loaded_gzip = 1 -- disable gzip
 vim.g.loaded_man = 1 -- disable man
 vim.g.loaded_remote_plugins = 1 -- disable rplugin
@@ -81,7 +81,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
--- Keymaps
+-- ================ Keymaps ================
 -- Split windows
 vim.keymap.set("n", "<Leader>ty", "<Cmd>vsp<CR><C-w>l")
 vim.keymap.set("n", "<Leader>tx", "<Cmd>split<CR><C-w>j")
@@ -147,7 +147,7 @@ end)
 -- Clear search highlights on pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Vim Plug packages
+-- ================ Vim Plug packages ================
 local Plug = vim.fn["plug#"]
 
 local telescope_fzf_native_cmd_installer = ""
@@ -200,7 +200,7 @@ Plug("echasnovski/mini.pairs", { ["branch"] = "stable" })
 Plug("lewis6991/gitsigns.nvim", { ["tag"] = "v0.9.0" })
 vim.call "plug#end"
 
--- Plugins configuration
+-- ================ Plugins configuration ================
 require('mini.pairs').setup()
 require('gitsigns').setup()
 
