@@ -61,13 +61,6 @@ vim.opt.hidden = true
 vim.opt.scrolloff = 5
 vim.opt.clipboard:append { "unnamed", "unnamedplus" }
 
--- Terminal
--- if vim.fn.has "win32" == 1 and vim.fn.executable "powershell" == 1 then
---     vim.opt.shell = vim.fn.exepath "powershell"
---     vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
---     vim.opt.shellxquote = ""
--- end
-
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('dotfiles-highlight-yank', { clear = true }),
