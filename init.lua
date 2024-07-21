@@ -20,16 +20,14 @@ vim.opt.background = "dark"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.completeopt:append { "menu", "menuone", "noinsert", "noselect" }
 vim.opt.showmode = true
 vim.opt.showcmd = false
 vim.opt.colorcolumn = "80"
-vim.opt.wrap = true
 
 -- Spaces / indents
 vim.opt.sw = 4
-vim.opt.cindent = true
 vim.opt.ai = true -- Auto indent
 vim.opt.si = true -- Smart indent
 vim.opt.breakindent = true
@@ -59,12 +57,7 @@ vim.opt.undofile = true -- undodir = ~/.local/state/nvim/undo
 vim.opt.backspace:append { "indent", "eol", "start" }
 vim.opt.hidden = true
 vim.opt.scrolloff = 5
-
-if vim.fn.has("win32") == 1 then
-    vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
-elseif vim.fn.has("unix") == 1 then
-    vim.opt.clipboard:append { "unnamedplus" }
-end
+vim.opt.clipboard:append { "unnamed", "unnamedplus" }
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
