@@ -9,10 +9,19 @@ vim.g.loaded_2html_plugin = 1 -- disable tohtml
 vim.g.loaded_tutor_mode_plugin = 1 -- disable tutor
 vim.g.loaded_zipPlugin = 1 -- disable zipPlugin
 
+-- ================ User Functions ================
+function ToggleBackground()
+    if vim.o.background == "dark" then
+        vim.o.background = "light"
+    else
+        vim.o.background = "dark"
+    end
+end
+
 -- Enable loader to increase performance
 vim.loader.enable()
 
--- Neovim options
+-- ================ Neovim options ================
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
@@ -145,6 +154,9 @@ end)
 
 -- Clear search highlights on pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Switches between background colors
+vim.keymap.set("n", "<Leader>tb", "<Cmd>lua ToggleBackground()<CR>")
 
 -- ================ Vim Plug packages ================
 local Plug = vim.fn["plug#"]
