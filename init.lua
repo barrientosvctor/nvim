@@ -431,6 +431,9 @@ vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 vim.keymap.set("n", "<Leader>fv", "<Cmd>Telescope file_browser<CR>")
 vim.keymap.set("n", "<Leader>fc", "<Cmd>Telescope builtin<CR>")
+vim.keymap.set("n", "<Leader>sn", function()
+    return require "telescope.builtin".find_files { cwd = vim.fn.stdpath "config" }
+end)
 
 -- Nvim DAP Config
 local dap = require('dap')
