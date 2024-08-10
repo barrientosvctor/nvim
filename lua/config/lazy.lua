@@ -32,7 +32,9 @@ require("lazy").setup("plugins", {
                 "zipPlugin",
                 "spellfile",
                 "shada",
-                "man"
+                "man",
+                "rplugin",
+                "osc52"
             }
         }
     },
