@@ -1,0 +1,33 @@
+{
+    "Initial CMake file": {
+       "prefix": "cmake_example_file",
+       "body": [
+           "cmake_minimum_required(VERSION ${1:3.10})",
+           "project(${2:Example})",
+           "add_executable(${CMAKE_PROJECT_NAME} ${3:main.cpp})"
+       ],
+       "description": "A basic CMake file."
+    },
+    "Initial CMake C++ file": {
+       "prefix": "cmake_cpp_file",
+       "body": [
+           "cmake_minimum_required(VERSION ${1:3.10})",
+           "project(${2:Example})",
+           "set(CMAKE_CXX_STANDARD ${3:11})",
+           "set(CMAKE_CXX_STANDARD_REQUIRED True)",
+           "add_executable(${CMAKE_PROJECT_NAME} ${4:main.cpp})"
+       ],
+       "description": "A basic CMake C++ file."
+    },
+    "Initial CMake C file": {
+       "prefix": "cmake_c_file",
+       "body": [
+           "cmake_minimum_required(VERSION ${1:3.10})",
+           "project(${2:Example} LANGUAGES C)",
+           "set(CMAKE_C_STANDARD ${3:11})",
+           "set(CMAKE_C_STANDARD_REQUIRED True)",
+           "add_executable(${CMAKE_PROJECT_NAME} ${4:main.c})"
+       ],
+       "description": "A basic CMake C file."
+    }
+}

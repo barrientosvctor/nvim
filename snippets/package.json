@@ -16,6 +16,10 @@
       {
         "language": ["typescript"],
         "path": "./typescript.json"
+      },
+      {
+         "language": ["cmake"],
+         "path": "./cmake.json"
       }
     ]
   }
