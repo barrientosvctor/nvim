@@ -45,3 +45,5 @@ $ nvim
 * If you want to install a new language server. Make sure to first adding it to [lsp config](/lua/utils/lsp.lua) file. Then restart Neovim. The language server will download automatically and ready to use.
 
 If you don't know how to configure any language server, take a look at this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
+
+Good luck!
