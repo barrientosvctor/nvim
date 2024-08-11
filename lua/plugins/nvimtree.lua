@@ -5,6 +5,7 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
+    cmd = { "NvimTreeToggle", "NvimTreeRefresh", "NvimTreeOpen", "NvimTreeClose" },
     keys = {
         {
             "<Leader>fv",
