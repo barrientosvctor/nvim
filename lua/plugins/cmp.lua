@@ -1,4 +1,3 @@
--- TODO: make autopairs config here
 return {
     -- Autocompletion
     'hrsh7th/nvim-cmp',

@@ -1,7 +1,8 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     build = ":TSUpdate",
+    cmd = { "TSInstall", "TSModuleInfo", "TSBufEnable", "TSBufDisable" },
     opts = {
         -- Add languages to be installed here that you want installed for treesitter
         ensure_installed = { "c", "cpp", "lua", "python", "javascript", "typescript", "markdown", "vimdoc" },
