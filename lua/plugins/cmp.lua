@@ -4,31 +4,28 @@ return {
     'hrsh7th/nvim-cmp',
     dependencies = {
         -- Snippet Engine & its associated nvim-cmp source
-        'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
+        {
+            'L3MON4D3/LuaSnip',
+            dependencies = 'rafamadriz/friendly-snippets',
+            opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+            config = function(_, opts)
+                require("luasnip").config.set_config(opts)
 
+                -- NOTE: the loader is called twice so it picks up the defaults first then my custom vscode snippets.
+                -- see: https://github.com/L3MON4D3/LuaSnip/issues/364
+                require('luasnip.loaders.from_vscode').lazy_load()
+                require('luasnip.loaders.from_vscode').lazy_load({ paths = "./snippets" })
+            end,
+        },
         -- Adds LSP completion capabilities
         'hrsh7th/cmp-nvim-lsp',
-
-        -- Adds a number of user-friendly snippets
-        'rafamadriz/friendly-snippets',
     },
     lazy = true,
     event = "InsertEnter",
     config = function()
         local cmp = require 'cmp'
-        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
         local luasnip = require 'luasnip'
-
-        luasnip.config.set_config {
-            history = true,
-            enable_autosnippets = true,
-        }
-
-        -- NOTE: the loader is called twice so it picks up the defaults first then my custom vscode snippets.
-        -- see: https://github.com/L3MON4D3/LuaSnip/issues/364
-        require('luasnip.loaders.from_vscode').lazy_load()
-        require('luasnip.loaders.from_vscode').lazy_load({ paths = "./snippets" })
 
         cmp.setup {
             formatting = {
@@ -93,8 +90,5 @@ return {
                 { name = 'luasnip' },
             },
         }
-
-        -- Add parentheses after selecting function or method item
-        cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end
 }
