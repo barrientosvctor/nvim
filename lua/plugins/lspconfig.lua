@@ -42,6 +42,8 @@ return {
                 }
             },
             cmake = {},
+            html = {},
+            cssls = {},
         }
         local on_attach = function(_, bufnr)
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame', buffer = bufnr })
