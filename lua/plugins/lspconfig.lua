@@ -3,16 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     lazy = true,
     event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-        -- Automatically install LSPs to stdpath for neovim
-        {
-            "williamboman/mason.nvim",
-            cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-            dependencies = {
-                { "williamboman/mason-lspconfig.nvim", opts = {} },
-            },
-        },
-    },
     config = function()
         local servers = {
             lua_ls = {
