@@ -54,3 +54,11 @@ $ ./scripts/actions.ps1 -Action 1
 * If you want to install a new language server. Make sure to first adding it to [lsp config](/init.lua#L248) object. Then restart Neovim. The language server will download automatically and ready to use.
 
 If you don't know how to configure any language server, take a look at this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
+
+### Devicons
+
+* If you have installed any [Nerd Font](https://www.nerdfonts.com/) font and if your terminal emulator of
+  your preference can support Nerd Font icons, make sure to enable devicons
+plugin [here](https://github.com/barrientosvctor/nvim/blob/main/lua/config/settings.lua#L10) for better programming experience.
+
+`vim.g.enable_devicons = true`

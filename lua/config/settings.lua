@@ -6,6 +6,8 @@ vim.g.loaded_ruby_provider = 0
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
+---@type boolean
+vim.g.enable_devicons = false
 
 -- Basic config
 vim.opt.background = "dark"

@@ -2,7 +2,10 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons"
+        {
+            "nvim-tree/nvim-web-devicons",
+            enabled = vim.g.enable_devicons
+        }
     },
     lazy = true,
     cmd = "Telescope",
