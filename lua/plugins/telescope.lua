@@ -34,6 +34,14 @@ return {
             mode = "n",
             desc = "Search into all nvim [H]elp documentation via telescope"
         },
+        {
+            "<leader>sf",
+            function()
+                return require "telescope.builtin".find_files { cwd = vim.fn.stdpath "config" }
+            end,
+            mode = "n",
+            desc = "Search into nvim dotfiles folder"
+        },
     },
     opts = {
         defaults = {
