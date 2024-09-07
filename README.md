@@ -18,7 +18,7 @@
 
 ## Installation
 
-**1.** Clone repository.
+**1.** Clone the repository.
 
 > Unix, Linux
 
@@ -32,28 +32,26 @@ $ git clone --depth 1 https://github.com/barrientosvctor/nvim.git ~/.config/nvim
 $ git clone https://github.com/barrientosvctor/nvim.git "$env:LOCALAPPDATA\nvim"
 ```
 
-**2.** Install Neovim submodules.
-
-> Unix, Linux
+**2.** Open Neovim.
 
 ```shell
-$ chmod u+x ./scripts/actions.sh
-$ ./scripts/actions.sh 1
-```
-
-> Windows Powershell
-
-```powershell
-$ ./scripts/actions.ps1 -Action 1
+$ nvim
 ```
 
 ## Notes
 
 ### LSP
 
-* If you want to install a new language server. Make sure to first adding it to [lsp config](/init.lua#L248) object. Then restart Neovim. The language server will download automatically and ready to use.
+* If you want to install a new language server, use Mason. Then configure the
+language server using lspconfig. If you don't know how to configure any language server, look at [server configurations](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
 
-If you don't know how to configure any language server, take a look at this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
+#### Mason
+
+* To automatically install the packages which aren't installed. Just type
+`:Mason`.
+
+* If you want to add a new package in the **ensure installed** list, just add
+the name of whose Mason package in the [Mason config](https://github.com/barrientosvctor/nvim/blob/main/lua/plugins/mason.lua#L8).
 
 ### Devicons
 
@@ -62,10 +60,3 @@ If you don't know how to configure any language server, take a look at this [doc
 plugin [here](https://github.com/barrientosvctor/nvim/blob/main/lua/config/settings.lua#L10) for better programming experience.
 
 `vim.g.enable_devicons = true`
-
-### Mason
-
-* To automatically install the packages which aren't installed. Just type
-`:Mason`.
-* If you want to add a new package in the **ensure installed** list, just add
-the name of whose Mason package in the [Mason config](https://github.com/barrientosvctor/nvim/blob/main/lua/plugins/mason.lua#L8).
