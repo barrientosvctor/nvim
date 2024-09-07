@@ -62,3 +62,10 @@ If you don't know how to configure any language server, take a look at this [doc
 plugin [here](https://github.com/barrientosvctor/nvim/blob/main/lua/config/settings.lua#L10) for better programming experience.
 
 `vim.g.enable_devicons = true`
+
+### Mason
+
+* To automatically install the packages which aren't installed. Just type
+`:Mason`.
+* If you want to add a new package in the **ensure installed** list, just add
+the name of whose Mason package in the [Mason config](https://github.com/barrientosvctor/nvim/blob/main/lua/plugins/mason.lua#L8).
