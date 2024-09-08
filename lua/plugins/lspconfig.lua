@@ -4,17 +4,12 @@ return {
     lazy = true,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities.textDocument.completion.completionItem.snippetSupport = true
-        -- local capabilities = vim.tbl_deep_extend("force",
-        --     vim.lsp.protocol.make_client_capabilities(),
-        --     require('cmp_nvim_lsp').default_capabilities()
-        -- )
-
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         local lspconfig = require("lspconfig")
+        local lsp_options = { capabilities = capabilities }
 
-        lspconfig.tsserver.setup {}
-        lspconfig.clangd.setup {}
+        lspconfig.tsserver.setup(lsp_options)
+        lspconfig.clangd.setup(lsp_options)
         lspconfig.lua_ls.setup {
             on_init = function(client)
                 local path = client.workspace_folders[1].name
@@ -44,21 +39,19 @@ return {
             end,
             settings = {
                 Lua = {}
-            }
+            },
+            capabilities = capabilities
         }
-        lspconfig.pyright.setup {}
-        lspconfig.html.setup {
-            capabilities = capabilities,
-        }
-        lspconfig.cssls.setup {
-            capabilities = capabilities,
-        }
+        lspconfig.pyright.setup(lsp_options)
+        lspconfig.html.setup(lsp_options)
+        lspconfig.cssls.setup(lsp_options)
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("ModLspConfig", {}),
             callback = function(ev)
                 -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
                 local opts = { buffer = ev.buf }
+                local builtin = require('telescope.builtin')
 
                 vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
                 vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, opts)
@@ -67,12 +60,12 @@ return {
                 vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next, opts)
                 vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev, opts)
 
-                vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
-                vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
-                vim.keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, opts)
-                vim.keymap.set('n', '<Leader>D', require('telescope.builtin').lsp_type_definitions, opts)
-                vim.keymap.set('n', '<Leader>ds', require('telescope.builtin').lsp_document_symbols, opts)
-                vim.keymap.set('n', '<Leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, opts)
+                vim.keymap.set('n', 'gd', builtin.lsp_definitions, opts)
+                vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
+                vim.keymap.set('n', 'gI', builtin.lsp_implementations, opts)
+                vim.keymap.set('n', '<Leader>D', builtin.lsp_type_definitions, opts)
+                vim.keymap.set('n', '<Leader>ds', builtin.lsp_document_symbols, opts)
+                vim.keymap.set('n', '<Leader>ws', builtin.lsp_dynamic_workspace_symbols, opts)
 
                 -- Lesser used LSP functionality
                 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
