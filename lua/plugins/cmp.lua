@@ -9,12 +9,25 @@ return {
             dependencies = 'rafamadriz/friendly-snippets',
             opts = { history = true, updateevents = "TextChanged,TextChangedI" },
             config = function(_, opts)
-                require("luasnip").config.set_config(opts)
+                local ls = require("luasnip")
+                ls.config.setup(opts)
 
                 -- NOTE: the loader is called twice so it picks up the defaults first then my custom vscode snippets.
                 -- see: https://github.com/L3MON4D3/LuaSnip/issues/364
                 require('luasnip.loaders.from_vscode').lazy_load()
                 require('luasnip.loaders.from_vscode').lazy_load({ paths = "./snippets" })
+
+                vim.keymap.set({ 'i', 's' }, "<C-k>", function()
+                    if ls.expand_or_jumpable() then
+                        ls.expand_or_jump()
+                    end
+                end)
+
+                vim.keymap.set({ 'i', 's' }, "<C-j>", function()
+                    if ls.jumpable(-1) then
+                        ls.jump(-1)
+                    end
+                end)
             end,
         },
         -- Adds LSP completion capabilities
@@ -23,13 +36,82 @@ return {
     lazy = true,
     event = "InsertEnter",
     config = function()
+        local kind_presets = {
+            default = {
+                Text = "󰉿",
+                Method = "󰆧",
+                Function = "󰊕",
+                Constructor = "",
+                Field = "󰜢",
+                Variable = "󰀫",
+                Class = "󰠱",
+                Interface = "",
+                Module = "",
+                Property = "󰜢",
+                Unit = "󰑭",
+                Value = "󰎠",
+                Enum = "",
+                Keyword = "󰌋",
+                Snippet = "",
+                Color = "󰏘",
+                File = "󰈙",
+                Reference = "󰈇",
+                Folder = "󰉋",
+                EnumMember = "",
+                Constant = "󰏿",
+                Struct = "󰙅",
+                Event = "",
+                Operator = "󰆕",
+                TypeParameter = "",
+            },
+            codicons = {
+                Text = "",
+                Method = "",
+                Function = "",
+                Constructor = "",
+                Field = "",
+                Variable = "",
+                Class = "",
+                Interface = "",
+                Module = "",
+                Property = "",
+                Unit = "",
+                Value = "",
+                Enum = "",
+                Keyword = "",
+                Snippet = "",
+                Color = "",
+                File = "",
+                Reference = "",
+                Folder = "",
+                EnumMember = "",
+                Constant = "",
+                Struct = "",
+                Event = "",
+                Operator = "",
+                TypeParameter = "",
+            },
+        }
+
+        ---Adds the devicons to completion.
+        ---@param type "default"|"codicons"
+        ---@param item any
+        ---@return string
+        local function format_kind_item(type, item)
+            if vim.g.enable_devicons then
+                return string.format('%s %s', kind_presets[type][item.kind], item.kind)
+            end
+
+            return string.format('%s', item.kind)
+        end
+
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
 
         cmp.setup {
             formatting = {
                 format = function(entry, vim_item)
-                    vim_item.kind = string.format('%s', vim_item.kind) -- This concatenates the name of the item kind
+                    vim_item.kind = format_kind_item("codicons", vim_item)
                     -- Source
                     vim_item.menu = ({
                         buffer = "[Buffer]",
@@ -46,43 +128,21 @@ return {
                     luasnip.lsp_expand(args.body)
                 end,
             },
-            completion = {
-                completeopt = 'menu,menuone,noinsert'
-            },
             mapping = cmp.mapping.preset.insert {
+                ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+                ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
                 ['<C-f>'] = cmp.mapping.complete {},
-                ['<CR>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        if luasnip.expandable() then
-                            luasnip.expand()
-                        else
-                            cmp.confirm({
-                                behavior = cmp.ConfirmBehavior.Replace,
-                                select = true
-                            })
-                        end
-                    else
-                        fallback()
-                    end
-                end),
-                ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.locally_jumpable(1) then
-                        luasnip.jump(1)
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-                ['<S-Tab>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.locally_jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()
-                    end
-                end, { 'i', 's' }),
+                ['<CR>'] = cmp.mapping(
+                    cmp.mapping.confirm {
+                        behavior = cmp.ConfirmBehavior.Insert,
+                        select = true
+                    },
+                    { 'i', 's' }
+                ),
+            },
+            window = {
+                -- completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
             },
             sources = {
                 { name = 'nvim_lsp' },
