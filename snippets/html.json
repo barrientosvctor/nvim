@@ -1,0 +1,7 @@
+{
+    "Lorem ipsum": {
+       "prefix": "lorem",
+       "body": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend dictum turpis tristique euismod. Duis tincidunt elit at risus rhoncus, vel ultrices turpis maximus. Nulla facilisi. Maecenas tincidunt elit et egestas iaculis. Vivamus nec nunc metus. Aenean volutpat felis vel porta vestibulum. Praesent nec sapien dapibus libero tempus dignissim a eu dui. Proin interdum luctus lectus id aliquam. Aenean ultricies magna vitae ligula feugiat condimentum."],
+       "description": "Generate a lorem ipsum paragraph."
+    }
+}

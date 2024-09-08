@@ -20,6 +20,10 @@
       {
          "language": ["cmake"],
          "path": "./cmake.json"
+      },
+      {
+         "language": ["html"],
+         "path": "./html.json"
       }
     ]
   }
