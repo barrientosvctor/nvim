@@ -6,16 +6,19 @@ return {
     config = function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities.textDocument.completion.completionItem.snippetSupport = true
+        -- local capabilities = vim.tbl_deep_extend("force",
+        --     vim.lsp.protocol.make_client_capabilities(),
+        --     require('cmp_nvim_lsp').default_capabilities()
+        -- )
 
         local lspconfig = require("lspconfig")
-        local lsp_options = { capabilities = capabilities }
 
         lspconfig.tsserver.setup {}
         lspconfig.clangd.setup {}
         lspconfig.lua_ls.setup {
             on_init = function(client)
                 local path = client.workspace_folders[1].name
-                if (vim.uv or vim.loop).fs_stat(path..'/.luarc.json') or (vim.uv or vim.loop).fs_stat(path..'/.luarc.jsonc') then
+                if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
                     return
                 end
 
@@ -44,8 +47,12 @@ return {
             }
         }
         lspconfig.pyright.setup {}
-        lspconfig.html.setup(lsp_options)
-        lspconfig.cssls.setup(lsp_options)
+        lspconfig.html.setup {
+            capabilities = capabilities,
+        }
+        lspconfig.cssls.setup {
+            capabilities = capabilities,
+        }
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("ModLspConfig", {}),

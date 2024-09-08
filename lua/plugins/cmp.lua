@@ -17,6 +17,8 @@ return {
                 require('luasnip.loaders.from_vscode').lazy_load({ paths = "./snippets" })
             end,
         },
+        -- Adds LSP completion capabilities
+        'hrsh7th/cmp-nvim-lsp',
     },
     lazy = true,
     event = "InsertEnter",
@@ -83,6 +85,7 @@ return {
                 end, { 'i', 's' }),
             },
             sources = {
+                { name = 'nvim_lsp' },
                 { name = 'luasnip' },
             },
         }
