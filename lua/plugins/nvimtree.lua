@@ -2,12 +2,6 @@ return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = true,
-    dependencies = {
-        {
-            "nvim-tree/nvim-web-devicons",
-            enabled = vim.g.enable_devicons
-        }
-    },
     cmd = { "NvimTreeToggle", "NvimTreeRefresh", "NvimTreeOpen", "NvimTreeClose" },
     keys = {
         {
@@ -41,14 +35,14 @@ return {
             },
             icons = {
                 show = {
-                    file = vim.g.enable_devicons,
-                    folder = vim.g.enable_devicons,
-                    folder_arrow = vim.g.enable_devicons,
-                    git = vim.g.enable_devicons,
-                    modified = vim.g.enable_devicons,
-                    hidden = vim.g.enable_devicons,
-                    diagnostics = vim.g.enable_devicons,
-                    bookmarks = vim.g.enable_devicons,
+                    file = false,
+                    folder = false,
+                    folder_arrow = false,
+                    git = false,
+                    modified = false,
+                    hidden = false,
+                    diagnostics = false,
+                    bookmarks = false,
                 },
                 web_devicons = {
                     file = {

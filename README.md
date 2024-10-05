@@ -49,11 +49,3 @@ language server using lspconfig. If you don't know how to configure any language
 
 * If you want to add a new package in the **ensure installed** list, just add
 the name of whose Mason package in the [Mason config](https://github.com/barrientosvctor/nvim/blob/main/lua/plugins/mason.lua#L8).
-
-### Devicons
-
-* If you have installed any [Nerd Font](https://www.nerdfonts.com/) font and if your terminal emulator of
-  your preference can support Nerd Font icons, make sure to enable devicons
-plugin [here](https://github.com/barrientosvctor/nvim/blob/main/lua/config/settings.lua#L10) for better programming experience.
-
-`vim.g.enable_devicons = true`

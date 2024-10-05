@@ -36,83 +36,12 @@ return {
     lazy = true,
     event = "InsertEnter",
     config = function()
-        local kind_presets = {
-            default = {
-                Text = "󰉿",
-                Method = "󰆧",
-                Function = "󰊕",
-                Constructor = "",
-                Field = "󰜢",
-                Variable = "󰀫",
-                Class = "󰠱",
-                Interface = "",
-                Module = "",
-                Property = "󰜢",
-                Unit = "󰑭",
-                Value = "󰎠",
-                Enum = "",
-                Keyword = "󰌋",
-                Snippet = "",
-                Color = "󰏘",
-                File = "󰈙",
-                Reference = "󰈇",
-                Folder = "󰉋",
-                EnumMember = "",
-                Constant = "󰏿",
-                Struct = "󰙅",
-                Event = "",
-                Operator = "󰆕",
-                TypeParameter = "",
-            },
-            codicons = {
-                Text = "",
-                Method = "",
-                Function = "",
-                Constructor = "",
-                Field = "",
-                Variable = "",
-                Class = "",
-                Interface = "",
-                Module = "",
-                Property = "",
-                Unit = "",
-                Value = "",
-                Enum = "",
-                Keyword = "",
-                Snippet = "",
-                Color = "",
-                File = "",
-                Reference = "",
-                Folder = "",
-                EnumMember = "",
-                Constant = "",
-                Struct = "",
-                Event = "",
-                Operator = "",
-                TypeParameter = "",
-            },
-        }
-
-        ---Adds the devicons to completion.
-        ---@param type "default"|"codicons"
-        ---@param item any
-        ---@return string
-        local function format_kind_item(type, item)
-            if vim.g.enable_devicons then
-                return string.format('%s %s', kind_presets[type][item.kind], item.kind)
-            end
-
-            return string.format('%s', item.kind)
-        end
-
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
 
         cmp.setup {
             formatting = {
                 format = function(entry, vim_item)
-                    vim_item.kind = format_kind_item("codicons", vim_item)
-                    -- Source
                     vim_item.menu = ({
                         buffer = "[Buffer]",
                         nvim_lsp = "[LSP]",
