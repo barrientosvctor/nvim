@@ -51,7 +51,6 @@ return {
             callback = function(ev)
                 -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
                 local opts = { buffer = ev.buf }
-                local builtin = require('telescope.builtin')
 
                 vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
                 vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, opts)
@@ -60,12 +59,12 @@ return {
                 vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next, opts)
                 vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev, opts)
 
-                vim.keymap.set('n', 'gd', builtin.lsp_definitions, opts)
-                vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
-                vim.keymap.set('n', 'gI', builtin.lsp_implementations, opts)
-                vim.keymap.set('n', '<Leader>D', builtin.lsp_type_definitions, opts)
-                vim.keymap.set('n', '<Leader>ds', builtin.lsp_document_symbols, opts)
-                vim.keymap.set('n', '<Leader>ws', builtin.lsp_dynamic_workspace_symbols, opts)
+                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, opts)
+                vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, opts)
+                vim.keymap.set('n', '<Leader>ds', vim.lsp.buf.document_symbol, opts)
+                vim.keymap.set('n', '<Leader>ws', vim.lsp.buf.workspace_symbol, opts)
 
                 -- Lesser used LSP functionality
                 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
