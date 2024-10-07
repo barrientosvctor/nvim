@@ -1,6 +1,6 @@
 return {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
+    'yioneko/nvim-cmp',
+    branch = 'perf',
     dependencies = {
         -- Snippet Engine & its associated nvim-cmp source
         'saadparwaiz1/cmp_luasnip',
@@ -35,11 +35,9 @@ return {
     },
     lazy = true,
     event = "InsertEnter",
-    config = function()
+    opts = function()
         local cmp = require 'cmp'
-        local luasnip = require 'luasnip'
-
-        cmp.setup {
+        return {
             formatting = {
                 format = function(entry, vim_item)
                     vim_item.menu = ({
@@ -54,7 +52,7 @@ return {
             },
             snippet = {
                 expand = function(args)
-                    luasnip.lsp_expand(args.body)
+                    require 'luasnip'.lsp_expand(args.body)
                 end,
             },
             mapping = cmp.mapping.preset.insert {
@@ -73,6 +71,7 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
             },
+
         }
     end
 }
