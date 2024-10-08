@@ -50,5 +50,3 @@ vim.opt.backspace:append { "indent", "eol", "start" }
 vim.opt.hidden = true
 vim.opt.scrolloff = 5
 vim.opt.clipboard:append { "unnamed", "unnamedplus" }
-
-vim.cmd.colorscheme "retrobox"
