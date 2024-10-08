@@ -35,11 +35,10 @@ return {
     },
     lazy = true,
     event = "InsertEnter",
-    config = function()
+    opts = function()
         local cmp = require 'cmp'
-        local luasnip = require 'luasnip'
 
-        cmp.setup {
+        return {
             formatting = {
                 format = function(entry, vim_item)
                     vim_item.menu = ({
@@ -54,7 +53,7 @@ return {
             },
             snippet = {
                 expand = function(args)
-                    luasnip.lsp_expand(args.body)
+                    require("luasnip").lsp_expand(args.body)
                 end,
             },
             mapping = cmp.mapping.preset.insert {
