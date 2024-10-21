@@ -17,6 +17,7 @@ vim.opt.completeopt:append { "menu", "menuone", "noinsert", "noselect" }
 vim.opt.showmode = true
 vim.opt.showcmd = false
 vim.opt.colorcolumn = "80"
+vim.opt.ruler = false
 
 -- Spaces / indents
 vim.opt.sw = 4
