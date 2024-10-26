@@ -46,16 +46,13 @@ map("t", "<C-j>", "<C-\\><C-n><C-w>j")
 map("t", "<C-k>", "<C-\\><C-n><C-w>k")
 map("t", "<C-l>", "<C-\\><C-n><C-w>l")
 
--- Delete buffer
+-- Buffers
+map("n", "<Leader>bn", "<Cmd>bnext<CR>")
+map("n", "<Leader>bp", "<Cmd>bprev<CR>")
 map("n", "<Leader>bd", "<Cmd>bdelete<CR>")
 
--- Inspect treesitter elements
-map("n", "<Leader>ww", "<Cmd>Inspect<CR>")
-map("n", "<Leader>wq", "<Cmd>InspectTree<CR>")
-
--- Move line
-map("n", "<C-S-Up>", "<Cmd>move -2<CR>")
-map("n", "<C-S-Down>", "<Cmd>move +1<CR>")
+-- Fuzzy finder
+map("n", "<Leader>ff", ":find ")
 
 -- Source nvimrc file
 map("n", "<Leader>so", function()
