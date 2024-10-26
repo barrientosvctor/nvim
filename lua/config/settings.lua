@@ -18,6 +18,7 @@ vim.opt.showmode = true
 vim.opt.showcmd = false
 vim.opt.colorcolumn = "80"
 vim.opt.ruler = false
+vim.opt.path = ".,,**"
 
 -- Spaces / indents
 vim.opt.sw = 4
@@ -27,8 +28,6 @@ vim.opt.breakindent = true
 
 -- Highlights
 vim.opt.cursorline = true
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Search
 vim.opt.hlsearch = true
@@ -36,6 +35,7 @@ vim.opt.showmatch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.wildignore:append { "*/tmp/*", "*/temp/*", "*/node_modules/*", "*/.venv/*", "__pycache__/*", ".DS_Store", ".env", "coverage/*", "build/*", ".vscode/*", ".git/*", "dist/*", "*.o", "*.obj", "*.pyc", "*.log" }
 
 -- Encoding
 vim.opt.fileencoding = "utf-8"
