@@ -10,6 +10,7 @@ return {
 
         lspconfig.tsserver.setup(lsp_options)
         lspconfig.clangd.setup(lsp_options)
+        lspconfig.cmake.setup(lsp_options)
         lspconfig.lua_ls.setup {
             on_init = function(client)
                 local path = client.workspace_folders[1].name
