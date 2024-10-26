@@ -35,7 +35,7 @@ vim.opt.showmatch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.wildignore:append { "*/tmp/*", "*/temp/*", "*/node_modules/*", "*/.venv/*", "__pycache__/*", ".DS_Store", ".env", "coverage/*", "build/*", ".vscode/*", ".git/*", "dist/*", "*.o", "*.obj", "*.pyc", "*.log" }
+vim.opt.wildignore:append { "*/tmp/*", "*/temp/*", "*/node_modules/*", "*/.venv/*", "*/__pycache__/*", ".DS_Store", ".env", "*/coverage/*", "*/build/*", "*/dist/*", "*/.vscode/*", "*/.git/*", "*.o", "*.obj", "*.pyc", "*.log" }
 
 -- Encoding
 vim.opt.fileencoding = "utf-8"
