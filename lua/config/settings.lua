@@ -18,7 +18,6 @@ vim.opt.showmode = true
 vim.opt.showcmd = false
 vim.opt.colorcolumn = "80"
 vim.opt.ruler = false
-vim.opt.path = ".,,**"
 
 -- Spaces / indents
 vim.opt.sw = 4

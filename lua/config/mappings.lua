@@ -50,10 +50,6 @@ map("t", "<C-l>", "<C-\\><C-n><C-w>l")
 map("n", "<Leader>bn", "<Cmd>bnext<CR>")
 map("n", "<Leader>bp", "<Cmd>bprev<CR>")
 map("n", "<Leader>bd", "<Cmd>bdelete<CR>")
-map("n", "<Leader>lb", "<Cmd>buffers<CR>:buffer<Space>", { desc = "Lists opened buffers" })
-
--- Fuzzy finder
-map("n", "<Leader>ff", ":find ")
 
 -- Source nvimrc file
 map("n", "<Leader>so", function()
