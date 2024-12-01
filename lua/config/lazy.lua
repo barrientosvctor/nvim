@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-    defaults = { lazy = true },
     dev = {
         path = vim.fn.expand "~/projects/nvim",
         pattern = { "barrientosvctor" }

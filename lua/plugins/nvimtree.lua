@@ -1,7 +1,6 @@
 return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = true,
     cmd = { "NvimTreeToggle", "NvimTreeRefresh", "NvimTreeOpen", "NvimTreeClose" },
     keys = {
         {

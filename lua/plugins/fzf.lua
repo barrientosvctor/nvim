@@ -1,6 +1,5 @@
 return {
     "ibhagwan/fzf-lua",
-    lazy = true,
     keys = {
         {
             "<Leader>ff",
@@ -21,14 +20,12 @@ return {
             mode = "n",
         },
     },
-    config = function()
-        require("fzf-lua").setup({
-            'max-perf',
-            winopts = {
-                preview = {
-                    default = "builtin"
-                }
+    opts = {
+        'max-perf',
+        winopts = {
+            preview = {
+                default = "builtin"
             }
-        })
-    end
+        }
+    },
 }

@@ -33,7 +33,6 @@ return {
         -- Adds LSP completion capabilities
         'hrsh7th/cmp-nvim-lsp',
     },
-    lazy = true,
     event = "InsertEnter",
     opts = function()
         local cmp = require 'cmp'
