@@ -21,7 +21,7 @@ return {
         },
     },
     opts = {
-        'max-perf',
+        "max-perf",
         winopts = {
             preview = {
                 default = "builtin"

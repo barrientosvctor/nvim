@@ -28,12 +28,6 @@ map("", "<C-j>", "<C-w>j")
 map("", "<C-k>", "<C-w>k")
 map("", "<C-l>", "<C-w>l")
 
--- Resize windows
-map("n", "t<left>", "<C-w>>")
-map("n", "t<right>", "<C-w><")
-map("n", "t<up>", "<C-w>+")
-map("n", "t<down>", "<C-w>-")
-
 -- Tabs
 map("n", "<Leader>te", "<Cmd>tabedit<CR>")
 map("n", "<Leader>tp", "<Cmd>tabprevious<CR>")
