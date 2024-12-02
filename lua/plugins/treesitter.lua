@@ -5,7 +5,7 @@ return {
     cmd = { "TSInstall", "TSpdate" },
     main = "nvim-treesitter.configs",
     opts = {
-        ensure_installed = { "c", "cpp", "lua", "python", "javascript", "typescript", "markdown", "vimdoc" },
+        ensure_installed = { "markdown", "vimdoc" },
         auto_install = false,
         highlight = { enable = true },
         indent = { enable = true },
