@@ -33,18 +33,3 @@ $ git clone https://github.com/barrientosvctor/nvim.git "$env:LOCALAPPDATA\nvim"
 ```shell
 $ nvim
 ```
-
-## Notes
-
-### LSP
-
-* If you want to install a new language server, use Mason. Then configure the
-language server using lspconfig. If you don't know how to configure any language server, look at [server configurations](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
-
-#### Mason
-
-* To automatically install the packages which aren't installed. Just type
-`:Mason`. (If doesn't find some package, just reopen neovim and retype this command)
-
-* If you want to add a new package in the **ensure installed** list, just add
-the name of whose Mason package in the [Mason config](https://github.com/barrientosvctor/nvim/blob/main/lua/plugins/mason.lua#L8).
