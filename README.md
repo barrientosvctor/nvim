@@ -3,7 +3,6 @@
 ## Must-have requeriments
 
 * [Neovim](https://neovim.io/) >= **0.9.2** version.
-* [Fzf](https://github.com/junegunn/fzf) >= **0.25** version.
 
 ## Suggested requeriments
 
@@ -11,6 +10,7 @@
 * [git-scm](https://git-scm.com/) >= **2.19.0** version.
 * `tar` and `curl` commands in path for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
 * a C compiler: this is necessary for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (the compiler should be in path).
+* [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) is required for Telescope.nvim's `live_grep` and `grep_string` commands.
 
 ## Installation
 

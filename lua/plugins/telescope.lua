@@ -1,9 +1,11 @@
 return {
-    "ibhagwan/fzf-lua",
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.8",
+    dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
         {
             "<Leader>ff",
-            "<Cmd>FzfLua files<CR>",
+            "<Cmd>Telescope find_files<CR>",
             desc = "Open files",
             mode = "n",
         },
@@ -20,12 +22,5 @@ return {
             mode = "n",
         },
     },
-    opts = {
-        "max-perf",
-        winopts = {
-            preview = {
-                default = "builtin"
-            }
-        }
-    },
+    opts = {},
 }
