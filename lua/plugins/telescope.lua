@@ -11,13 +11,13 @@ return {
         },
         {
             "<Leader>fb",
-            "<Cmd>FzfLua buffers<CR>",
+            "<Cmd>Telescope buffers<CR>",
             desc = "Open buffers",
             mode = "n",
         },
         {
             "<Leader>fg",
-            "<Cmd>FzfLua live_grep<CR>",
+            "<Cmd>Telescope live_grep<CR>",
             desc = "Open grep",
             mode = "n",
         },
