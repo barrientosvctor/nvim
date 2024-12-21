@@ -21,6 +21,14 @@ return {
             desc = "Open grep",
             mode = "n",
         },
+        {
+            "<Leader>fd",
+            function()
+                return require("telescope.builtin").find_files { cwd = vim.fn.stdpath "config" }
+            end,
+            desc = "Open neovim dotfiles",
+            mode = "n",
+        },
     },
     opts = {},
 }
