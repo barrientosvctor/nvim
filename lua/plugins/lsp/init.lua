@@ -21,6 +21,19 @@ return {
                     capabilities = capabilities
                 }
             end,
+
+            ["clangd"] = function (server_name)
+                local clangd_setup = {
+                    capabilities = capabilities
+                }
+
+                if vim.fn.has("win32") and vim.fn.executable("clangd") then
+                    local clangd_exe = vim.fn.exepath "clangd"
+                    clangd_setup.cmd = { clangd_exe, "--query-driver=C:\\msys64\\ucrt64\\bin\\gcc.exe,C:\\msys64\\ucrt64\\bin\\g++.exe" } -- MSYS2 compiler
+                end
+
+                require("lspconfig").clangd.setup(clangd_setup)
+            end,
         }
 
         vim.api.nvim_create_autocmd("LspAttach", {
