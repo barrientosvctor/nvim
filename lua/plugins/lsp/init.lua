@@ -8,7 +8,6 @@ return {
         },
         {
             "williamboman/mason-lspconfig.nvim",
-            version = "v1.30.0",
             opts = {},
         }
     },
