@@ -5,7 +5,7 @@ return {
     cmd = { "NvimTreeToggle", "NvimTreeRefresh", "NvimTreeOpen", "NvimTreeClose" },
     keys = {
         {
-            "<Leader>fv",
+            "<Leader>fe",
             function()
                 require("nvim-tree.api").tree.toggle({ find_file = true, update_root = true })
             end,
