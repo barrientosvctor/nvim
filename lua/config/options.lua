@@ -9,7 +9,6 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.wrap = true
 vim.opt.completeopt:append { "menu", "menuone", "noinsert", "noselect" }
-vim.opt.cursorline = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.swapfile = false
