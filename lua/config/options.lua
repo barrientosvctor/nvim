@@ -14,11 +14,3 @@ vim.opt.encoding = "utf-8"
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.clipboard:append { "unnamed", "unnamedplus" }
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    group = vim.api.nvim_create_augroup("dotfiles-highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
