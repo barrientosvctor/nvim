@@ -30,11 +30,10 @@ map("t", "<C-j>", "<C-\\><C-n><C-w>j")
 map("t", "<C-k>", "<C-\\><C-n><C-w>k")
 map("t", "<C-l>", "<C-\\><C-n><C-w>l")
 
--- Switches between background colors
-map("n", "<Leader>tb", function()
+vim.api.nvim_create_user_command("ToggleBackground", function()
     if vim.o.background == "dark" then
         vim.o.background = "light"
     else
         vim.o.background = "dark"
     end
-end)
+end, {})
