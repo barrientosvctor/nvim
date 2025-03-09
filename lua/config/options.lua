@@ -14,3 +14,4 @@ vim.opt.encoding = "utf-8"
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.clipboard:append { "unnamed", "unnamedplus" }
+vim.opt.cursorline = true
