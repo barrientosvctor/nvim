@@ -5,6 +5,10 @@ return {
         "rafamadriz/friendly-snippets",
         "hrsh7th/cmp-nvim-lsp",
         "saadparwaiz1/cmp_luasnip",
+        {
+            "windwp/nvim-autopairs",
+            opts = {}
+        }
     },
     event = "InsertEnter",
     opts = function()
@@ -25,6 +29,9 @@ return {
         end)
 
         local cmp = require("cmp")
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
+        cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
         return {
             snippet = {
