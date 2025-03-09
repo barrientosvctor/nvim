@@ -13,5 +13,33 @@ return {
             desc = "Open NvimTree."
         },
     },
-    opts = {},
+    opts = {
+        disable_netrw = true,
+        hijack_netrw  = true,
+        view          = {
+            width = 30,
+            side = "right",
+            preserve_window_proportions = true,
+        },
+        renderer      = {
+            add_trailing = true,
+            group_empty = true,
+            indent_markers = {
+                enable = true,
+                inline_arrows = true,
+            },
+        },
+        git           = {
+            enable = false,
+        },
+        filters       = {
+            dotfiles = true,
+            git_ignored = true,
+        },
+        actions       = {
+            open_file = {
+                quit_on_open = true,
+            },
+        },
+    },
 }
