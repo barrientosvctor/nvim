@@ -10,13 +10,13 @@ return {
     config = function()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         local lspconfig = require("lspconfig")
+        local servers = { "ts_ls", "lua_ls", "clangd", "pylsp", "html", "cssls" }
 
-        lspconfig.ts_ls.setup {}
-        lspconfig.lua_ls.setup {}
-        lspconfig.clangd.setup {}
-        lspconfig.pylsp.setup {}
-        lspconfig.html.setup {}
-        lspconfig.cssls.setup {}
+        for _, lsp in ipairs(servers) do
+            lspconfig[lsp].setup {
+                capabilities = capabilities
+            }
+        end
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("ModLspConfig", {}),
